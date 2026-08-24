@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://dtvfxddbafu0u"]
+
+[ext_resource type="Texture2D" uid="uid://dk2cfg0okwnng" path="res://resources/office_background.svg" id="1_g3mwp"]
+[ext_resource type="PackedScene" uid="uid://cf61o7rv0f8lf" path="res://scenes/employee.tscn" id="2_n0wcf"]
+[ext_resource type="PackedScene" uid="uid://1boym6kr2645" path="res://scenes/monitor.tscn" id="3_qphb6"]
+[ext_resource type="PackedScene" uid="uid://bjanwt8bty6ok" path="res://scenes/printer.tscn" id="4_hub07"]
+[ext_resource type="PackedScene" uid="uid://bn6c0s3tm32ot" path="res://scenes/shredder.tscn" id="5_2knxt"]
+[ext_resource type="PackedScene" uid="uid://nj6soaiqevc2" path="res://scenes/filing_cabinet.tscn" id="6_hub07"]
+
+[node name="OfficeBackground" type="Sprite2D" unique_id=1952112511]
+texture = ExtResource("1_g3mwp")
+
+[node name="MonitorOff" parent="." unique_id=1986725704 instance=ExtResource("3_qphb6")]
+position = Vector2(-141, -66)
+scale = Vector2(0.3, 0.3)
+
+[node name="MonitorOff2" parent="." unique_id=369266240 instance=ExtResource("3_qphb6")]
+position = Vector2(-16, -66)
+scale = Vector2(0.3, 0.3)
+
+[node name="MonitorOff3" parent="." unique_id=1343537776 instance=ExtResource("3_qphb6")]
+position = Vector2(104, -66)
+scale = Vector2(0.3, 0.3)
+
+[node name="Printer" parent="." unique_id=882071107 instance=ExtResource("4_hub07")]
+position = Vector2(-340, -211)
+scale = Vector2(0.2, 0.2)
+
+[node name="Shredder" parent="." unique_id=1776859560 instance=ExtResource("5_2knxt")]
+position = Vector2(-341, 209)
+scale = Vector2(0.2, 0.2)
+
+[node name="FilingCabinet" parent="." unique_id=1611268436 instance=ExtResource("6_hub07")]
+position = Vector2(334, -167)
+scale = Vector2(0.2, 0.2)
+
+[node name="Employee" parent="." unique_id=650243236 instance=ExtResource("2_n0wcf")]
+position = Vector2(-136, 76)
+scale = Vector2(0.3, 0.3)
+
+[node name="Employee2" parent="." unique_id=650562611 instance=ExtResource("2_n0wcf")]
+position = Vector2(-6, 74)
+scale = Vector2(0.3, 0.3)
+
+[node name="Employee3" parent="." unique_id=757801071 instance=ExtResource("2_n0wcf")]
+position = Vector2(110, 74)
+scale = Vector2(0.3, 0.3)

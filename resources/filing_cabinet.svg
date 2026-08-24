@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="102.83292mm"
+   height="152.05406mm"
+   viewBox="0 0 102.83292 152.05406"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
+   sodipodi:docname="filing_cabinet.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.81776696"
+     inkscape:cx="150.4096"
+     inkscape:cy="192.59766"
+     inkscape:window-width="1920"
+     inkscape:window-height="1080"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-38.722829,-47.874024)">
+    <g
+       id="g4">
+      <rect
+         style="fill:#ffffff;stroke:#000000;stroke-width:2.30641;stroke-linecap:round;paint-order:markers stroke fill"
+         id="rect2"
+         width="100.52651"
+         height="49.205925"
+         x="39.876034"
+         y="49.027229"
+         ry="0.30404955" />
+      <rect
+         style="fill:#ffffff;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-dasharray:none;paint-order:markers stroke fill"
+         id="rect3"
+         width="17.484045"
+         height="8.5581264"
+         x="81.39727"
+         y="58.238617"
+         ry="0.052881729" />
+      <path
+         id="rect4"
+         style="fill:#ffffff;stroke:#000000;stroke-width:2;stroke-linecap:butt;paint-order:markers stroke fill"
+         d="m 105.9065,74.956227 v 7.86818 c 0,0.02727 -0.022,0.04923 -0.0492,0.04923 H 74.421282 c -0.02727,0 -0.04923,-0.02195 -0.04923,-0.04923 v -7.86818"
+         sodipodi:nodetypes="cssssc" />
+    </g>
+    <g
+       id="g6"
+       transform="translate(0,50.270858)">
+      <rect
+         style="fill:#ffffff;stroke:#000000;stroke-width:2.30641;stroke-linecap:round;paint-order:markers stroke fill"
+         id="rect5"
+         width="100.52651"
+         height="49.205925"
+         x="39.876034"
+         y="49.027229"
+         ry="0.30404955" />
+      <rect
+         style="fill:#ffffff;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-dasharray:none;paint-order:markers stroke fill"
+         id="rect6"
+         width="17.484045"
+         height="8.5581264"
+         x="81.39727"
+         y="58.238617"
+         ry="0.052881729" />
+      <path
+         id="path6"
+         style="fill:#ffffff;stroke:#000000;stroke-width:2;stroke-linecap:butt;paint-order:markers stroke fill"
+         d="m 105.9065,74.956227 v 7.86818 c 0,0.02727 -0.022,0.04923 -0.0492,0.04923 H 74.421282 c -0.02727,0 -0.04923,-0.02195 -0.04923,-0.04923 v -7.86818"
+         sodipodi:nodetypes="cssssc" />
+    </g>
+    <g
+       id="g8"
+       transform="translate(0,100.54173)">
+      <rect
+         style="fill:#ffffff;stroke:#000000;stroke-width:2.30641;stroke-linecap:round;paint-order:markers stroke fill"
+         id="rect7"
+         width="100.52651"
+         height="49.205925"
+         x="39.876034"
+         y="49.027229"
+         ry="0.30404955" />
+      <rect
+         style="fill:#ffffff;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-dasharray:none;paint-order:markers stroke fill"
+         id="rect8"
+         width="17.484045"
+         height="8.5581264"
+         x="81.39727"
+         y="58.238617"
+         ry="0.052881729" />
+      <path
+         id="path8"
+         style="fill:#ffffff;stroke:#000000;stroke-width:2;stroke-linecap:butt;paint-order:markers stroke fill"
+         d="m 105.9065,74.956227 v 7.86818 c 0,0.02727 -0.022,0.04923 -0.0492,0.04923 H 74.421282 c -0.02727,0 -0.04923,-0.02195 -0.04923,-0.04923 v -7.86818"
+         sodipodi:nodetypes="cssssc" />
+    </g>
+  </g>
+</svg>

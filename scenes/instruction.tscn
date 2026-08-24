@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ksws5lqukrj4"]
+
+[ext_resource type="Script" uid="uid://cvnx7pd3ud2ii" path="res://source/instruction.gd" id="1_maccc"]
+
+[node name="Button" type="Button" unique_id=1828442142]
+offset_left = -91.529
+offset_top = -22.719
+offset_right = 91.529076
+offset_bottom = 22.720453
+toggle_mode = true
+script = ExtResource("1_maccc")

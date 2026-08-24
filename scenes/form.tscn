@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://df00cdv4ja731"]
+
+[ext_resource type="Texture2D" uid="uid://cq5w2d6fkwheu" path="res://res/form.svg" id="1_cn5gw"]
+
+[node name="Form" type="Sprite2D" unique_id=1705239328]
+texture = ExtResource("1_cn5gw")

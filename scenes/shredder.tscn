@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bn6c0s3tm32ot"]
+
+[ext_resource type="Texture2D" uid="uid://cx0s8oo3071gr" path="res://res/shredder.svg" id="1_bqsve"]
+
+[node name="Shredder" type="Sprite2D" unique_id=1776859560]
+texture = ExtResource("1_bqsve")
