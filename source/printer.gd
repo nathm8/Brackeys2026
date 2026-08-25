@@ -83,9 +83,10 @@ class FormDeliveryTask:
                 picked_up = true
                 printer.form = null
                 form.reparent(employee, true)
-                form.create_tween().tween_property(form, "position", Vector2(0, 50), 0.2)
+                form.create_tween().tween_property(form, "position", Vector2(0, 100), 0.2)
+                form.create_tween().tween_property(form, "rotation", PI/4, 0.2)
             else:
-                employee.position -= delta * 100 * (employee.global_position - form.global_position).normalized()
+                employee.position -= employee.speed_modifier * delta * 100 * (employee.global_position - form.global_position).normalized()
         else:
             if employee.position.distance_to(destination.position) < 10:
                 time_to_complete -= delta
@@ -93,7 +94,7 @@ class FormDeliveryTask:
                     finish()
                     return true
             else:
-                employee.position -= delta * 100 * (employee.position - destination.position).normalized()
+                employee.position -= employee.speed_modifier * delta * 100 * (employee.position - destination.position).normalized()
         return false
 
     func finish():

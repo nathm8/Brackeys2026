@@ -4,6 +4,7 @@ extends Node2D
 # correctly or not
 var total_incorrect_task_number = 5
 var total_correct_task_number = 10
+
 var incorrect_task_number = 5
 var correct_task_number = 10
 var do_task_correctly = []
@@ -12,6 +13,10 @@ var do_task_correctly = []
 var to_do = []
 var tasks_accomplished = 0
 var tasks_failed = 0
+
+var score_text = "Done!
+Correctly done tasks: %s / %s
+Tasks failed: %s / %s"
 
 func _ready():
     for _x in incorrect_task_number:
@@ -43,6 +48,9 @@ func task_finished(was_correct):
         tasks_accomplished += 1
     else:
         tasks_failed += 1
+    if tasks_accomplished + tasks_failed == total_correct_task_number + total_incorrect_task_number:
+        get_node("Score").text = score_text % [str(tasks_accomplished), str(total_correct_task_number + total_incorrect_task_number), str(tasks_failed), str(total_incorrect_task_number)]
+    
 
 # default task to generate forms
 class ComputerWorkTask:
@@ -72,7 +80,7 @@ class ComputerWorkTask:
             else:
                 monitor_node.set_slacking()
         else:
-            employee.position -= delta * 100 * (employee.position - monitor_node.position).normalized()
+            employee.position -= employee.speed_modifier * delta * 100 * (employee.position - monitor_node.position).normalized()
         return false
 
     func finish():

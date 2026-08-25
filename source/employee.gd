@@ -6,6 +6,12 @@ const Instruction = preload("res://source/instruction.gd")
 const spawn_margin = 100
 
 var current_task
+var speed_modifier = 1.0
+var face
+
+var default_face = "´～`"
+var happy_faces = ["⊙ω⊙", "•ิ_•ิ", "¬‿¬"]
+var angry_faces = ["ಠ_ಠ", "⌣̀_⌣́", "╥﹏╥"]
 
 func _ready():
     var office = get_tree().root.get_node("Main/Office")
@@ -26,10 +32,20 @@ func input_event(event):
         if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
             if Instruction.correction != null and current_task != null:
                 var correct = Instruction.correction.check_if_valid_correction(current_task)
+                var face = get_node("Face")
                 if correct:
-                    # todo: show surprise, speed up
                     Instruction.correction.fix(current_task)
+                    # show surprise, speed up
+                    face.text = happy_faces.pick_random()
+                    speed_modifier += 0.5
+                    var tween = create_tween()
+                    tween.tween_property(self, "speed_modifier", 1.0, 5)
+                    tween.tween_callback(func f(): face.text = default_face)
                 else:
-                    # todo: show anger or confusion, stop for awhile
-                    pass
+                    # show anger or confusion, stop for awhile
+                    speed_modifier = 0.0
+                    face.text = angry_faces.pick_random()
+                    var tween = create_tween()
+                    tween.tween_property(self, "speed_modifier", 1.0, 5)
+                    tween.tween_callback(func f(): face.text = default_face)
                 Instruction.correction = null
