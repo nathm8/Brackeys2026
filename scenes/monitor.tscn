@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://1boym6kr2645"]
 
-[ext_resource type="Texture2D" uid="uid://clnqx8velj6cd" path="res://res/monitor_off.svg" id="1_qh22o"]
+[ext_resource type="Texture2D" uid="uid://clnqx8velj6cd" path="res://resources/monitor_off.svg" id="1_qh22o"]
+[ext_resource type="Script" uid="uid://b0f1280ldr4sb" path="res://source/monitor.gd" id="2_3jcr0"]
 
 [node name="MonitorOff" type="Sprite2D" unique_id=1986725704]
 texture = ExtResource("1_qh22o")
+script = ExtResource("2_3jcr0")

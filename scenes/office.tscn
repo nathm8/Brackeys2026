@@ -10,15 +10,15 @@
 [node name="OfficeBackground" type="Sprite2D" unique_id=1952112511]
 texture = ExtResource("1_g3mwp")
 
-[node name="MonitorOff" parent="." unique_id=1986725704 instance=ExtResource("3_qphb6")]
+[node name="Monitor0" parent="." unique_id=1986725704 instance=ExtResource("3_qphb6")]
 position = Vector2(-141, -66)
 scale = Vector2(0.3, 0.3)
 
-[node name="MonitorOff2" parent="." unique_id=369266240 instance=ExtResource("3_qphb6")]
+[node name="Monitor1" parent="." unique_id=369266240 instance=ExtResource("3_qphb6")]
 position = Vector2(-16, -66)
 scale = Vector2(0.3, 0.3)
 
-[node name="MonitorOff3" parent="." unique_id=1343537776 instance=ExtResource("3_qphb6")]
+[node name="Monitor2" parent="." unique_id=1343537776 instance=ExtResource("3_qphb6")]
 position = Vector2(104, -66)
 scale = Vector2(0.3, 0.3)
 

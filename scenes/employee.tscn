@@ -3,6 +3,18 @@
 [ext_resource type="Texture2D" uid="uid://oyx2lun4f6e4" path="res://resources/employee.svg" id="1_44iv1"]
 [ext_resource type="Script" uid="uid://borqgdeg673dl" path="res://source/employee.gd" id="2_qe1e8"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_qe1e8"]
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+
 [node name="Employee" type="Sprite2D" unique_id=650243236]
 texture = ExtResource("1_44iv1")
 script = ExtResource("2_qe1e8")
+
+[node name="Face" type="Label" parent="." unique_id=1909542939]
+offset_left = -41.0
+offset_top = -30.0
+offset_right = 41.0
+offset_bottom = 39.0
+text = "´～`"
+label_settings = SubResource("LabelSettings_qe1e8")

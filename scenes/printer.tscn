@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bjanwt8bty6ok"]
 
-[ext_resource type="Texture2D" uid="uid://chjjw0bs8c1um" path="res://res/printer.svg" id="1_jhpce"]
+[ext_resource type="Texture2D" uid="uid://chjjw0bs8c1um" path="res://resources/printer.svg" id="1_jhpce"]
+[ext_resource type="Script" uid="uid://bpnh1uhx4y0xs" path="res://source/printer.gd" id="2_kdvce"]
 
 [node name="Printer" type="Sprite2D" unique_id=882071107]
 texture = ExtResource("1_jhpce")
+script = ExtResource("2_kdvce")
