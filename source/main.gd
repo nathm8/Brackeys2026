@@ -48,6 +48,8 @@ class ComputerWorkTask:
     var monitor_node
     static var time_to_complete = 1
     var main
+    # todo: have them play solitaire sometimes
+    var is_correct = true
 
     func _init(m):
         main = m

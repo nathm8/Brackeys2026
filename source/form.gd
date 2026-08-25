@@ -2,7 +2,10 @@ extends Sprite2D
 
 const Printer = preload("res://source/printer.gd")
 
-func _init(type):
+var type
+
+func _init(t):
+    type = t
     if type == Printer.FormType.Square:
         texture = preload("res://resources/form_square.svg")
     if type == Printer.FormType.Circle:

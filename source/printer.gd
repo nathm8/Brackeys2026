@@ -57,6 +57,7 @@ class FormDeliveryTask:
     var printer
     var form
     var destination
+    var destination_type
     var time_to_complete = 1
     var picked_up = false
     var is_correct: bool
@@ -66,6 +67,7 @@ class FormDeliveryTask:
         form = f
         printer = p
         is_correct = tuple.is_correct
+        destination_type = tuple.target
         var pattern
         if tuple.target == Destination.FilingCabinet:
             pattern = "FilingCabinet*"
@@ -73,6 +75,7 @@ class FormDeliveryTask:
             pattern = "Shredder*"
         for dest in main.find_children(pattern):
             destination = dest
+            break
 
     func execute(delta, employee):
         if not picked_up:
