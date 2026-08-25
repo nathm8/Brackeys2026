@@ -2,6 +2,8 @@ extends Node2D
 
 # maintain boolean list of whether the next assigned task will be done
 # correctly or not
+var total_incorrect_task_number = 5
+var total_correct_task_number = 10
 var incorrect_task_number = 5
 var correct_task_number = 10
 var do_task_correctly = []
@@ -48,11 +50,11 @@ class ComputerWorkTask:
     var monitor_node
     static var time_to_complete = 1
     var main
-    # todo: have them play solitaire sometimes
-    var is_correct = true
+    var is_correct
 
     func _init(m):
         main = m
+        is_correct = randi() % 10 != 0
         for monitor in main.find_children("Monitor?"):
             if not monitor.in_use:
                 monitor_node = monitor
@@ -61,11 +63,14 @@ class ComputerWorkTask:
 
     func execute(delta, employee):
         if employee.position.distance_to(monitor_node.position) < 10:
-            monitor_node.set_working()
-            time_to_complete -= delta
-            if time_to_complete <= 0:
-                finish()
-                return true
+            if is_correct:
+                monitor_node.set_working()
+                time_to_complete -= delta
+                if time_to_complete <= 0:
+                    finish()
+                    return true
+            else:
+                monitor_node.set_slacking()
         else:
             employee.position -= delta * 100 * (employee.position - monitor_node.position).normalized()
         return false
