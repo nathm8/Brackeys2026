@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bjanwt8bty6ok" path="res://scenes/printer.tscn" id="4_hub07"]
 [ext_resource type="PackedScene" uid="uid://bn6c0s3tm32ot" path="res://scenes/shredder.tscn" id="5_2knxt"]
 [ext_resource type="PackedScene" uid="uid://nj6soaiqevc2" path="res://scenes/filing_cabinet.tscn" id="6_hub07"]
+[ext_resource type="PackedScene" uid="uid://dirpdkxyfslhk" path="res://scenes/camera.tscn" id="7_2knxt"]
 
 [node name="OfficeBackground" type="Sprite2D" unique_id=1952112511]
 texture = ExtResource("1_g3mwp")
@@ -45,3 +46,7 @@ scale = Vector2(0.3, 0.3)
 [node name="Employee3" parent="." unique_id=757801071 instance=ExtResource("2_n0wcf")]
 position = Vector2(110, 74)
 scale = Vector2(0.3, 0.3)
+
+[node name="Camera" parent="." unique_id=107067258 instance=ExtResource("7_2knxt")]
+position = Vector2(-0.9999993, -234.00002)
+scale = Vector2(0.24489795, 0.24489796)

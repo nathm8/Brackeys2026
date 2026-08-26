@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="73.017029mm"
+   height="51.763046mm"
+   viewBox="0 0 73.017029 51.763046"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="camera.svg"
+   inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.6355339"
+     inkscape:cx="135.12407"
+     inkscape:cy="43.10519"
+     inkscape:window-width="1920"
+     inkscape:window-height="1080"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-73.331337,-38.40263)">
+    <path
+       id="path4"
+       style="fill:#ffffff;stroke:#000000;stroke-width:4;stroke-linecap:round;stroke-dasharray:none;paint-order:markers stroke fill"
+       d="m 139.53774,56.839941 c -0.95328,0.486383 -2.03469,0.760677 -3.18224,0.760677 H 83.324113 c -0.780544,0 -1.530578,-0.127081 -2.230355,-0.361218 a 29.280703,29.280703 0 0 0 -0.04599,1.645378 29.280703,29.280703 0 0 0 29.280382,29.2809 29.280703,29.280703 0 0 0 29.2809,-29.2809 29.280703,29.280703 0 0 0 -0.0713,-2.044837 z" />
+    <g
+       id="g4"
+       transform="translate(9.8713168,-48.589036)">
+      <circle
+         style="fill:#800000;stroke:#000000;stroke-width:5.29605;stroke-linecap:round;stroke-dasharray:none;paint-order:markers stroke fill"
+         id="circle4"
+         cx="99.648232"
+         cy="77.320137"
+         r="3.9624741" />
+      <circle
+         style="fill:#ffffff;stroke:#ff0000;stroke-width:2.05256;stroke-linecap:round;stroke-dasharray:none;paint-order:markers stroke fill"
+         id="path2"
+         cx="99.648232"
+         cy="77.320137"
+         r="1.5357127" />
+    </g>
+    <rect
+       style="fill:#333333;stroke:#000000;stroke-width:4;stroke-linecap:round;stroke-dasharray:none;paint-order:markers stroke fill"
+       id="rect4"
+       width="69.017029"
+       height="18.206049"
+       x="75.331337"
+       y="40.40263"
+       ry="3.6210749" />
+  </g>
+</svg>

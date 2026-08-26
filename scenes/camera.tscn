@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dirpdkxyfslhk"]
+
+[ext_resource type="Texture2D" uid="uid://crjog7jeoc1in" path="res://resources/camera.svg" id="1_kod1s"]
+[ext_resource type="Script" uid="uid://dntxxbieff2n2" path="res://source/camera.gd" id="2_gtx3x"]
+[ext_resource type="Texture2D" uid="uid://0hmm4pvnyfl0" path="res://resources/camera_iris.svg" id="2_tmlye"]
+
+[node name="Camera" type="Sprite2D" unique_id=107067258]
+texture = ExtResource("1_kod1s")
+script = ExtResource("2_gtx3x")
+
+[node name="CameraIrisAnchor" type="Node2D" parent="." unique_id=777169828]
+
+[node name="CameraIris" type="Sprite2D" parent="CameraIrisAnchor" unique_id=1337872759]
+position = Vector2(60, 0)
+texture = ExtResource("2_tmlye")

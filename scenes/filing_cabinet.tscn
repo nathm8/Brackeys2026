@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://nj6soaiqevc2"]
 
-[ext_resource type="Texture2D" uid="uid://b5ei553q68l2y" path="res://res/filing_cabinet.svg" id="1_xkpke"]
+[ext_resource type="Texture2D" uid="uid://b5ei553q68l2y" path="res://resources/filing_cabinet.svg" id="1_xkpke"]
 
-[node name="FilingCabinet" type="Sprite2D" unique_id=1611268436]
+[node name="FilingCabinet" type="Sprite2D" unique_id=325596737]
 texture = ExtResource("1_xkpke")
