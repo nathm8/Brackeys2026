@@ -20,7 +20,10 @@ func _ready():
         type = InstructionType.SquareShred
 
 func _button_pressed():
-    correction = self
+    if button_pressed:
+        correction = self
+    else:
+        correction = null
 
 # i.e. check if we're issuing the right sort of correction. Returns
 # false if the task was already correct, or if we've issued a nonsense
