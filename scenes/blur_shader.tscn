@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://xd33kc38ua0f"]
+
+[ext_resource type="Shader" uid="uid://ccg307ynwv8u3" path="res://source/gauss_blur_x.gdshader" id="1_0xegv"]
+[ext_resource type="Script" uid="uid://s666j4xkb4km" path="res://source/blur_controller.gd" id="1_hqrdb"]
+[ext_resource type="Shader" uid="uid://cuoj5tin7oek3" path="res://source/gauss_blur_y.gdshader" id="2_jmccm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hqrdb"]
+shader = ExtResource("1_0xegv")
+shader_parameter/mouse_pos = Vector2(0, 0)
+shader_parameter/enabled = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2460u"]
+shader = ExtResource("2_jmccm")
+shader_parameter/mouse_pos = Vector2(0, 0)
+shader_parameter/enabled = false
+
+[node name="Blur" type="Node2D" unique_id=85190629]
+script = ExtResource("1_hqrdb")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=384225848]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=283813817]
+material = SubResource("ShaderMaterial_hqrdb")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.5
+offset_top = 59.0
+offset_right = -310.5
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1991548230]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2" unique_id=490321285]
+material = SubResource("ShaderMaterial_2460u")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.5
+offset_top = 59.0
+offset_right = -310.5
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
