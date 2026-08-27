@@ -15,6 +15,7 @@
 [node name="Level1" type="Node2D" unique_id=961841195]
 
 [node name="OfficeBackground" type="NinePatchRect" parent="." unique_id=1245132620]
+self_modulate = Color(0.9254902, 0.8745098, 0.8117647, 1)
 offset_left = -500.0
 offset_top = -356.0
 offset_right = 500.0
@@ -57,7 +58,7 @@ position = Vector2(419.99997, -241.99998)
 scale = Vector2(1.3241966, 1.3241966)
 texture = ExtResource("9_jjcrf")
 
-[node name="Employee" parent="." unique_id=650243236 instance=ExtResource("10_l83iu")]
+[node name="Employee1" parent="." unique_id=650243236 instance=ExtResource("10_l83iu")]
 position = Vector2(-180.09073, 100.63894)
 scale = Vector2(1.3241966, 1.3241966)
 

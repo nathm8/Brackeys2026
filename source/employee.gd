@@ -2,9 +2,6 @@ extends Node2D
 
 const Instruction = preload("res://source/instruction.gd")
 
-# stay this far away from the edge of the office
-const spawn_margin = 200
-
 var current_task
 var speed_modifier = 1.0
 var face
@@ -18,10 +15,8 @@ static var angry_faces = ["ಠ_ಠ", "⌣̀_⌣́", "╥﹏╥", "•ิ_•ิ"
 
 func _ready():
     var office = get_node("../OfficeBackground")
-    print(office.get_rect().size)
-    position.x = randi() % roundi(office.get_rect().size.x - spawn_margin) + office.position.x + spawn_margin
-    position.y = randi() % roundi(office.get_rect().size.y - spawn_margin) + office.position.y + spawn_margin
-    print(position)
+    position.x += randi() % 400 - 200
+    position.y += randi() % 400 - 200
 
     # init face and skin tone
     default_face = default_faces.pick_random()

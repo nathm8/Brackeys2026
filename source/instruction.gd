@@ -12,11 +12,11 @@ var type
 
 func _ready():
     pressed.connect(_button_pressed)
-    if text == "Work on Computer":
+    if text == "1) Work on Computer":
         type = InstructionType.ComputerWork
-    if text == "File Triangle Forms":
+    if text == "2) File Triangle Forms":
         type = InstructionType.TriangleFile
-    if text == "Shred Square Forms":
+    if text == "3) Shred Square Forms":
         type = InstructionType.SquareShred
 
 func _button_pressed():
@@ -24,6 +24,10 @@ func _button_pressed():
         correction = self
     else:
         correction = null
+    # unpress all other instruction buttons
+    for instruction in get_node("..").find_children("Instruction*"):
+        if (instruction != self):
+            instruction.button_pressed = false
 
 # i.e. check if we're issuing the right sort of correction. Returns
 # false if the task was already correct, or if we've issued a nonsense

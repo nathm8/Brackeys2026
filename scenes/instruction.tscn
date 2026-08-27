@@ -2,10 +2,14 @@
 
 [ext_resource type="Script" uid="uid://cvnx7pd3ud2ii" path="res://source/instruction.gd" id="1_maccc"]
 
-[node name="Button" type="Button" unique_id=1828442142]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_maccc"]
+bg_color = Color(0.0908847, 0.0908847, 0.0908847, 1)
+
+[node name="Instruction" type="Button" unique_id=1828442142]
 offset_left = -91.529
 offset_top = -22.719
 offset_right = 91.529076
 offset_bottom = 22.720453
+theme_override_styles/normal = SubResource("StyleBoxFlat_maccc")
 toggle_mode = true
 script = ExtResource("1_maccc")

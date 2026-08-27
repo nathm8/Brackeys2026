@@ -16,7 +16,10 @@ var tasks_failed = 0
 
 var score_text = "Done!
 Correctly done tasks: %s / %s
-Tasks failed: %s / %s"
+Tasks failed: %s / %s
+Time taken: %s"
+
+var total_time = 0.0
 
 func _ready():
     for _x in incorrect_task_number:
@@ -25,8 +28,8 @@ func _ready():
         do_task_correctly.append(true)
     do_task_correctly.shuffle()
 
-func _process(_delta: float):
-    pass
+func _process(delta: float):
+    total_time += delta
 
 func _unhandled_input(event):
     if event is InputEventKey:
@@ -49,7 +52,7 @@ func task_finished(was_correct):
     else:
         tasks_failed += 1
     if tasks_accomplished + tasks_failed == total_correct_task_number + total_incorrect_task_number:
-        get_node("Score").text = score_text % [str(tasks_accomplished), str(total_correct_task_number + total_incorrect_task_number), str(tasks_failed), str(total_incorrect_task_number)]
+        get_node("Score").text = score_text % [str(tasks_accomplished), str(total_correct_task_number + total_incorrect_task_number), str(tasks_failed), str(total_incorrect_task_number), str(total_time)]
     
 
 # default task to generate forms

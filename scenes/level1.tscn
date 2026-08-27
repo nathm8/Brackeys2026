@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://c0j7ssfwqquvr"]
+
+[ext_resource type="Script" uid="uid://bru5kp78kfawh" path="res://source/main.gd" id="1_ru4tf"]
+[ext_resource type="PackedScene" uid="uid://dtvfxddbafu0u" path="res://scenes/level1office.tscn" id="2_6sh32"]
+[ext_resource type="PackedScene" uid="uid://30almci084ms" path="res://scenes/level1rules.tscn" id="3_ejswk"]
+[ext_resource type="PackedScene" uid="uid://xd33kc38ua0f" path="res://scenes/blur_shader.tscn" id="4_bbk5w"]
+[ext_resource type="PackedScene" uid="uid://dmax1tinf8i5b" path="res://scenes/countdown_timer.tscn" id="5_conm7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sugp2"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="Main" type="Node2D" unique_id=318863329]
+script = ExtResource("1_ru4tf")
+
+[node name="Office" parent="." unique_id=1930234121 instance=ExtResource("2_6sh32")]
+position = Vector2(500, 356)
+
+[node name="RulesBackground" parent="." unique_id=318147905 instance=ExtResource("3_ejswk")]
+position = Vector2(1140, 356)
+
+[node name="Score" type="Label" parent="." unique_id=2015832042]
+offset_left = 1029.0
+offset_top = 568.0
+offset_right = 1254.0
+offset_bottom = 622.0
+label_settings = SubResource("LabelSettings_sugp2")
+horizontal_alignment = 1
+
+[node name="Blur" parent="." unique_id=85190629 instance=ExtResource("4_bbk5w")]
+visible = false
+position = Vector2(1, 0)
+
+[node name="Timer" parent="." unique_id=245550557 instance=ExtResource("5_conm7")]
+offset_left = 1094.0
+offset_top = 23.0
+offset_right = 1195.0
+offset_bottom = 124.0

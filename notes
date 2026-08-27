@@ -1,43 +1,35 @@
-tweaks
+============================
+Todo
+============================
+timer
+pause
+show timer for task completion over employees
+main menu
+    horizontal layout
+    have camera tracking
+
+powerups
 -----------
+give speedup to watched employeeds
+
+tasks
+-----------
+fax forms from one office to another
+
+incorrectness
+-----------
+global slowdown when mistake happens
+water cooler where employees chat
+union rep who gives immunity to nearby employees
+
+============================
+tweaks
+============================
 ensure an even distribution of tasks are created
+make employees go to the closest computer for work
 
 ============================
 to discuss
------------
+============================
 do nonhuman skin tones instead, more sci-fi less anglonormative
 
-============================
-
-
-juice
------------
-physics
-employees make faces and expressions
-    !!! ??? #
-Have camera in the office track the mouse, laser pointer, alarm light for corrections
-    give speedup to watched employeeds
-
-task ideas
------------
-fax forms from one office to another
-machine that breaks down and needs repair occassionally
-
-incorrectness ideas
------------
-employees who are more\less prone to correctness
-employees with different speeds (or sizes if physics works)
-water cooler
-union rep who gives extended breaktimes to nearby employees
-
-graphics
------------
-export the svgs at their desired in-game resolution
-colours
-pick a resolution, use the whole screen space
-
-controls
------------
-number the instructions and allow them to be selected via hotkey
-pause
-do main menu

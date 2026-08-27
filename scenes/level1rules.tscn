@@ -3,9 +3,34 @@
 [ext_resource type="Texture2D" uid="uid://dk2cfg0okwnng" path="res://resources/office_background.svg" id="1_aomae"]
 [ext_resource type="PackedScene" uid="uid://ksws5lqukrj4" path="res://scenes/instruction.tscn" id="2_66h5d"]
 
+[sub_resource type="InputEventKey" id="InputEventKey_aomae"]
+device = -1
+keycode = 49
+unicode = 49
+
+[sub_resource type="Shortcut" id="Shortcut_nhge4"]
+events = [SubResource("InputEventKey_aomae")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_nhge4"]
+device = -1
+keycode = 50
+unicode = 50
+
+[sub_resource type="Shortcut" id="Shortcut_rsier"]
+events = [SubResource("InputEventKey_nhge4")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_n8rfu"]
+device = -1
+keycode = 51
+unicode = 51
+
+[sub_resource type="Shortcut" id="Shortcut_cg8om"]
+events = [SubResource("InputEventKey_n8rfu")]
+
 [node name="Level1Rules" type="Node2D" unique_id=1669565950]
 
 [node name="OfficeBackground" type="NinePatchRect" parent="." unique_id=647117524]
+self_modulate = Color(0.972549, 0.95686275, 0.5647059, 1)
 offset_left = -140.0
 offset_top = -356.0
 offset_right = 140.0
@@ -18,23 +43,26 @@ patch_margin_bottom = 40
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
-[node name="Button" parent="." unique_id=1828442142 instance=ExtResource("2_66h5d")]
+[node name="Instruction" parent="." unique_id=1828442142 instance=ExtResource("2_66h5d")]
 offset_left = -91.0
 offset_top = -120.0
 offset_right = 92.058
 offset_bottom = -74.561005
-text = "Work on Computer"
+shortcut = SubResource("Shortcut_nhge4")
+text = "1) Work on Computer"
 
-[node name="Button2" parent="." unique_id=622066259 instance=ExtResource("2_66h5d")]
+[node name="Instruction2" parent="." unique_id=622066259 instance=ExtResource("2_66h5d")]
 offset_left = -90.0
 offset_top = -25.0
 offset_right = 93.058075
 offset_bottom = 20.439453
-text = "File Triangle Forms"
+shortcut = SubResource("Shortcut_rsier")
+text = "2) File Triangle Forms"
 
-[node name="Button3" parent="." unique_id=298939147 instance=ExtResource("2_66h5d")]
+[node name="Instruction3" parent="." unique_id=298939147 instance=ExtResource("2_66h5d")]
 offset_left = -90.0
 offset_top = 68.0
 offset_right = 93.058075
 offset_bottom = 113.43945
-text = "Shred Square Forms"
+shortcut = SubResource("Shortcut_cg8om")
+text = "3) Shred Square Forms"
