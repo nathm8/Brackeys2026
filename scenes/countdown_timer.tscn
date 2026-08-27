@@ -17,6 +17,7 @@ offset_right = 25.0
 offset_bottom = 25.0
 max_value = 30.0
 step = 0.0
+value = 30.0
 fill_mode = 4
 texture_progress = ExtResource("1_d7c0i")
 script = ExtResource("2_5r2fa")

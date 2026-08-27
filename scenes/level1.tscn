@@ -31,7 +31,9 @@ visible = false
 position = Vector2(1, 0)
 
 [node name="Timer" parent="." unique_id=245550557 instance=ExtResource("5_conm7")]
-offset_left = 1094.0
-offset_top = 23.0
-offset_right = 1195.0
-offset_bottom = 124.0
+visible = false
+offset_left = 1137.0
+offset_top = 95.0
+offset_right = 1137.0
+offset_bottom = 95.0
+scale = Vector2(2, 2)

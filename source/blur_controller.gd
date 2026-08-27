@@ -22,6 +22,3 @@ func _process(_delta):
     mouse_pos.y /= size.y
     get_node("CanvasLayer/ColorRect").material.set_shader_parameter("mouse_pos", mouse_pos)
     get_node("CanvasLayer2/ColorRect").material.set_shader_parameter("mouse_pos", mouse_pos)
-
-# 437 x 324
-# 809 x 529

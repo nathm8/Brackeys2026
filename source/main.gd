@@ -17,7 +17,7 @@ var tasks_failed = 0
 var score_text = "Done!
 Correctly done tasks: %s / %s
 Tasks failed: %s / %s
-Time taken: %s"
+Time taken: %s seconds"
 
 var total_time = 0.0
 
@@ -52,8 +52,9 @@ func task_finished(was_correct):
     else:
         tasks_failed += 1
     if tasks_accomplished + tasks_failed == total_correct_task_number + total_incorrect_task_number:
-        get_node("Score").text = score_text % [str(tasks_accomplished), str(total_correct_task_number + total_incorrect_task_number), str(tasks_failed), str(total_incorrect_task_number), str(total_time)]
-    
+        get_node("Score").text = score_text % [str(tasks_accomplished), str(total_correct_task_number + total_incorrect_task_number), str(tasks_failed), str(total_incorrect_task_number), str(round(total_time))]
+        # print(total_time)
+        # get_tree().reload_current_scene()
 
 # default task to generate forms
 class ComputerWorkTask:

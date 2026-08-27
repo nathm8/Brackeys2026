@@ -9,12 +9,11 @@ var default_face
 
 var previous_x = 0
 
-static var default_faces = ["´～`", "•_•", "'-'"]
-static var happy_faces = ["⊙ω⊙", " ͡° ͜ʖ ͡°", "¬‿¬", "„• ֊ •„", ">ᴗ<", "˘︶˘"]
-static var angry_faces = ["ಠ_ಠ", "⌣̀_⌣́", "╥﹏╥", "•ิ_•ิ", "¬`‸´¬"]
+static var default_faces = ["´~`", "•_•", "'-'"]
+static var happy_faces = ["⊙ω⊙", "¬‿¬", "„• ֊ •„", ">ᴗ<", "˘ᵕ˘"]
+static var angry_faces = ["≖_≖", "⌣̀_⌣́", "╥‸╥", "•ิ_•ิ", "¬`‸´¬"]
 
 func _ready():
-    var office = get_node("../OfficeBackground")
     position.x += randi() % 400 - 200
     position.y += randi() % 400 - 200
 
@@ -44,9 +43,9 @@ func _process(delta: float) -> void:
         current_task = null
     # directionality
     if position.x < previous_x:
-        scale = Vector2(1, 1)
-    elif position.x > previous_x:
         scale = Vector2(-1, 1)
+    elif position.x > previous_x:
+        scale = Vector2(1, 1)
     previous_x = position.x
 
 func input_event(event):
