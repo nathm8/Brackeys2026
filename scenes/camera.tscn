@@ -11,5 +11,5 @@ script = ExtResource("2_gtx3x")
 [node name="CameraIrisAnchor" type="Node2D" parent="." unique_id=777169828]
 
 [node name="CameraIris" type="Sprite2D" parent="CameraIrisAnchor" unique_id=1337872759]
-position = Vector2(60, 0)
+position = Vector2(18, 0)
 texture = ExtResource("2_tmlye")

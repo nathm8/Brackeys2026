@@ -6,11 +6,13 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hqrdb"]
 shader = ExtResource("1_0xegv")
+shader_parameter/camera_pos = Vector2(0, 0)
 shader_parameter/mouse_pos = Vector2(0, 0)
 shader_parameter/enabled = false
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2460u"]
 shader = ExtResource("2_jmccm")
+shader_parameter/camera_pos = Vector2(0, 0)
 shader_parameter/mouse_pos = Vector2(0, 0)
 shader_parameter/enabled = false
 
@@ -24,10 +26,10 @@ material = SubResource("ShaderMaterial_hqrdb")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 32.5
-offset_top = 59.0
-offset_right = -310.5
-offset_bottom = -60.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -295.0
+offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -40,10 +42,10 @@ material = SubResource("ShaderMaterial_2460u")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 32.5
-offset_top = 59.0
-offset_right = -310.5
-offset_bottom = -60.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -295.0
+offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2

@@ -39,7 +39,7 @@ func print():
         return null
     form = Form.new(tuple.form)
     add_child(form)
-    form.position.y += 190
+    form.position.y += 40
 
     main.add_task(FormDeliveryTask.new(self, main, form, tuple))
 
@@ -83,7 +83,7 @@ class FormDeliveryTask:
                 picked_up = true
                 printer.form = null
                 form.reparent(employee, true)
-                form.create_tween().tween_property(form, "position", Vector2(0, 100), 0.2)
+                form.create_tween().tween_property(form, "position", Vector2(10, 30), 0.2)
                 form.create_tween().tween_property(form, "rotation", PI/4, 0.2)
             else:
                 employee.position -= employee.speed_modifier * delta * 100 * (employee.global_position - form.global_position).normalized()

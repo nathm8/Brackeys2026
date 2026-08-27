@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://30almci084ms"]
+
+[ext_resource type="Texture2D" uid="uid://dk2cfg0okwnng" path="res://resources/office_background.svg" id="1_aomae"]
+[ext_resource type="PackedScene" uid="uid://ksws5lqukrj4" path="res://scenes/instruction.tscn" id="2_66h5d"]
+
+[node name="Level1Rules" type="Node2D" unique_id=1669565950]
+
+[node name="OfficeBackground" type="NinePatchRect" parent="." unique_id=647117524]
+offset_left = -140.0
+offset_top = -356.0
+offset_right = 140.0
+offset_bottom = 364.0
+texture = ExtResource("1_aomae")
+patch_margin_left = 40
+patch_margin_top = 40
+patch_margin_right = 40
+patch_margin_bottom = 40
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Button" parent="." unique_id=1828442142 instance=ExtResource("2_66h5d")]
+offset_left = -91.0
+offset_top = -120.0
+offset_right = 92.058
+offset_bottom = -74.561005
+text = "Work on Computer"
+
+[node name="Button2" parent="." unique_id=622066259 instance=ExtResource("2_66h5d")]
+offset_left = -90.0
+offset_top = -25.0
+offset_right = 93.058075
+offset_bottom = 20.439453
+text = "File Triangle Forms"
+
+[node name="Button3" parent="." unique_id=298939147 instance=ExtResource("2_66h5d")]
+offset_left = -90.0
+offset_top = 68.0
+offset_right = 93.058075
+offset_bottom = 113.43945
+text = "Shred Square Forms"

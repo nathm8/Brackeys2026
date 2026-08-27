@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="72.58403mm"
-   height="140.06285mm"
-   viewBox="0 0 72.584032 140.06285"
+   width="55.967026mm"
+   height="63.659489mm"
+   viewBox="0 0 55.967026 63.659488"
    version="1.1"
    id="svg1"
-   sodipodi:docname="rules_background.svg"
    inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
+   sodipodi:docname="employee_body1.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -23,13 +23,12 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     showguides="false"
-     inkscape:zoom="0.60942454"
-     inkscape:cx="264.18365"
-     inkscape:cy="345.40782"
+     inkscape:zoom="0.90832301"
+     inkscape:cx="113.39578"
+     inkscape:cy="24.770924"
      inkscape:window-width="1920"
      inkscape:window-height="1080"
-     inkscape:window-x="1920"
+     inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
@@ -39,14 +38,11 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-26.516323,-67.239151)">
-    <rect
+     transform="translate(-22.824323,-99.38536)">
+    <path
+       id="path2"
        style="fill:#ffffff;stroke:#000000;stroke-width:4;stroke-linecap:round;stroke-dasharray:none;paint-order:markers stroke fill"
-       id="rect1"
-       width="68.58403"
-       height="136.06285"
-       x="28.516323"
-       y="69.239151"
-       rx="0.54530656" />
+       d="m 76.791349,140.53155 c 10e-7,14.35029 -11.633215,20.5133 -25.983513,20.5133 -14.350298,0 -25.983514,-6.16301 -25.983513,-20.5133 -1e-6,-14.3503 11.633215,-39.14619 25.983513,-39.14619 14.350298,0 25.983514,24.79589 25.983513,39.14619 z"
+       sodipodi:nodetypes="sssss" />
   </g>
 </svg>

@@ -1,33 +1,65 @@
 [gd_scene format=3 uid="uid://cf61o7rv0f8lf"]
 
-[ext_resource type="Texture2D" uid="uid://oyx2lun4f6e4" path="res://resources/employee.svg" id="1_44iv1"]
+[ext_resource type="Texture2D" uid="uid://duyrhair8sn5o" path="res://resources/employee_body1.svg" id="1_cnox6"]
+[ext_resource type="Texture2D" uid="uid://c63bdnureur2f" path="res://resources/employee_head.svg" id="2_4h078"]
+[ext_resource type="Texture2D" uid="uid://b6tb7utvtqr3c" path="res://resources/union_vest1.svg" id="2_crjcn"]
 [ext_resource type="Script" uid="uid://borqgdeg673dl" path="res://source/employee.gd" id="2_qe1e8"]
+[ext_resource type="Texture2D" uid="uid://6ndm5g0fjq3j" path="res://resources/employee_body2.svg" id="3_crjcn"]
+[ext_resource type="Texture2D" uid="uid://dim77jp2kcesm" path="res://resources/union_vest2.svg" id="4_crjcn"]
+[ext_resource type="Texture2D" uid="uid://p8h5ery6vfse" path="res://resources/manager_hat.svg" id="6_jtbt0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qe1e8"]
-font_size = 50
+font_size = 15
 font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qe1e8"]
-radius = 84.095184
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_crjcn"]
+radius = 83.33332
+height = 339.99988
 
-[node name="Employee" type="Sprite2D" unique_id=650243236]
-texture = ExtResource("1_44iv1")
+[node name="Employee" type="Node2D" unique_id=218318582]
 script = ExtResource("2_qe1e8")
 
-[node name="Face" type="Label" parent="." unique_id=1909542939]
-anchors_preset = -1
+[node name="EmployeeBody1" type="Sprite2D" parent="." unique_id=823245002]
+position = Vector2(0, 40)
+texture = ExtResource("1_cnox6")
+
+[node name="UnionVest1" type="Sprite2D" parent="EmployeeBody1" unique_id=1046759727]
+position = Vector2(0.25, -4)
+scale = Vector2(0.9444444, 1)
+texture = ExtResource("2_crjcn")
+
+[node name="EmployeeBody2" type="Sprite2D" parent="." unique_id=664890129]
+position = Vector2(0, 40)
+texture = ExtResource("3_crjcn")
+
+[node name="UnionVest2" type="Sprite2D" parent="EmployeeBody2" unique_id=963201578]
+texture = ExtResource("4_crjcn")
+
+[node name="EmployeeHead" type="Sprite2D" parent="." unique_id=1964641560]
+texture = ExtResource("2_4h078")
+
+[node name="Face" type="Label" parent="EmployeeHead" unique_id=1909542939]
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -123.0
-offset_top = -112.0
-offset_right = -41.0
-offset_bottom = -43.0
+offset_left = -36.5
+offset_top = -33.5
+offset_right = -11.5
+offset_bottom = -11.5
+grow_horizontal = 2
+grow_vertical = 2
 text = "´～`"
 label_settings = SubResource("LabelSettings_qe1e8")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1131362533]
+[node name="ManagerHat" type="Sprite2D" parent="." unique_id=1529544262]
+position = Vector2(0, -31)
+texture = ExtResource("6_jtbt0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=885722341]
-shape = SubResource("CircleShape2D_qe1e8")
+[node name="Area2D" type="Area2D" parent="." unique_id=1131362533]
+scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1546339978]
+position = Vector2(1.04904175e-05, 86.66669)
+shape = SubResource("CapsuleShape2D_crjcn")

@@ -38,7 +38,7 @@ void fragment() {
 
         if (ab_dot_be > 0.0) {
             dist = dist_to_camera;
-            dist_cutoff = 0.05;
+            dist_cutoff = 0.055;
         } else if (ab_dot_ae < 0.0) {
             dist = dist_to_mouse;
             dist_cutoff = 0.07 * dist_to_camera + 0.05;
@@ -58,9 +58,13 @@ void fragment() {
             col += texture(screen_texture, SCREEN_UV + vec2(0.0, 4.0 * -SCREEN_PIXEL_SIZE.y)).xyz * 0.05;
             COLOR.xyz = col;
 
-            float noise = random(SCREEN_UV + TIME) * 2.0 - 1.0;
-            noise *= dist;
-            COLOR.rgb += noise;
+            float noise = dist*(random(SCREEN_UV + TIME) * 2.0 - 1.0);
+            COLOR.r += 0.5*noise;
+            noise = dist*(random(SCREEN_UV + 1.2*TIME) * 2.0 - 1.0);
+            COLOR.g += 0.5*noise;
+            noise = dist*(random(SCREEN_UV + 1.4*TIME) * 2.0 - 1.0);
+            COLOR.b += 0.5*noise;
+            COLOR.a = 0.75;
         } else {
             // original colour
             COLOR.xyz = texture(screen_texture, SCREEN_UV).xyz;

@@ -33,7 +33,7 @@ void fragment() {
 
         if (ab_dot_be > 0.0) {
             dist = dist_to_camera;
-            dist_cutoff = 0.05;
+            dist_cutoff = 0.055;
         } else if (ab_dot_ae < 0.0) {
             dist = dist_to_mouse;
             dist_cutoff = 0.07 * dist_to_camera + 0.05;
