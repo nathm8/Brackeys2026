@@ -6,9 +6,9 @@ var type
 
 func _init(t):
     type = t
-    if type == Printer.FormType.Square:
+    if type == Task.FormType.Square:
         texture = preload("res://resources/form_square.svg")
-    if type == Printer.FormType.Circle:
+    if type == Task.FormType.Circle:
         texture = preload("res://resources/form_circle.svg")
-    if type == Printer.FormType.Triangle:
+    if type == Task.FormType.Triangle:
         texture = preload("res://resources/form_triangle.svg")

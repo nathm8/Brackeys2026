@@ -9,7 +9,7 @@ var default_face
 
 var previous_x = 0
 
-static var default_faces = ["´~`", "•_•", "'-'"]
+static var default_faces = ["´~`", "•_•", " '-'"]
 static var happy_faces = ["⊙ω⊙", "¬‿¬", "„• ֊ •„", ">ᴗ<", "˘ᵕ˘"]
 static var angry_faces = ["≖_≖", "⌣̀_⌣́", "╥‸╥", "•ิ_•ิ", "¬`‸´¬"]
 

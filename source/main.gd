@@ -6,7 +6,7 @@ var total_incorrect_task_number = 5
 var total_correct_task_number = 10
 
 var incorrect_task_number = 5
-var correct_task_number = 0
+var correct_task_number = 10
 var do_task_correctly = []
 
 # list of tasks that require doing
@@ -47,7 +47,7 @@ func _unhandled_input(event):
         
 func get_task():
     if to_do.size() == 0:
-        return ComputerWorkTask.new(self)
+        return Task.ComputerWork.new(self)
     return to_do.pop_front()
 
 func add_task(task):
@@ -65,47 +65,3 @@ func task_finished(was_correct):
         tween.tween_property(self, "speed_modifier", 1.0, 5)
     if tasks_accomplished + tasks_failed == total_correct_task_number + total_incorrect_task_number:
         get_node("Score").text = score_text % [str(tasks_accomplished), str(total_correct_task_number + total_incorrect_task_number), str(tasks_failed), str(total_incorrect_task_number), str(round(total_time))]
-        # print(total_time)
-        # get_tree().reload_current_scene()
-
-# default task to generate forms
-class ComputerWorkTask:
-
-    var monitor_node
-    static var time_to_complete = 1
-    var main
-    var is_correct
-
-    func _init(m):
-        main = m
-        is_correct = randi() % 10 != 0
-        for monitor in main.find_children("Monitor?"):
-            if not monitor.in_use:
-                monitor_node = monitor
-                monitor.in_use = true
-                break
-
-    func execute(delta, employee):
-        var speed_modifier = main.speed_modifier * employee.speed_modifier
-        if employee.position.distance_to(monitor_node.position) < 10:
-            if is_correct:
-                monitor_node.set_working()
-                time_to_complete -= speed_modifier * delta
-                if time_to_complete <= 0:
-                    finish()
-                    return true
-            else:
-                monitor_node.set_slacking()
-        else:
-            employee.position -= speed_modifier * delta * 100 * (employee.position - monitor_node.position).normalized()
-        return false
-
-    func finish():
-        monitor_node.in_use = false
-        monitor_node.set_off()
-        monitor_node = null
-        time_to_complete = 1
-        # todo: buffer print jobs
-        for printer in main.find_children("Printer*"):
-            if not printer.is_full():
-                printer.print()

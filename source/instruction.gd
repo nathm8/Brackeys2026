@@ -1,7 +1,6 @@
 extends Button
 
 const Main = preload("res://source/main.gd")
-const Printer = preload("res://source/printer.gd")
 
 static var correction
 
@@ -40,35 +39,34 @@ func check_if_valid_correction(task) -> bool:
         return false
 
     if type == InstructionType.ComputerWork:
-        return task is Main.ComputerWorkTask
+        return task is Task.ComputerWork
     # FormDeliveryTask only considered corrected based on the destination
     if type == InstructionType.TriangleFile:
-        return (task is Printer.FormDeliveryTask and
-               task.form.type == Printer.FormType.Triangle and
-               task.destination_type == Printer.Destination.Shredder)
+        return (task is Task.FormDelivery and
+               task.form.type == Task.FormType.Triangle and
+               task.destination_type == Task.Destination.Shredder)
     if type == InstructionType.SquareShred:
-        return (task is Printer.FormDeliveryTask and
-               task.form.type == Printer.FormType.Square and
-               task.destination_type == Printer.Destination.FilingCabinet)
+        return (task is Task.FormDelivery and
+               task.form.type == Task.FormType.Square and
+               task.destination_type == Task.Destination.FilingCabinet)
     
     return false
 
 func fix(task):
     assert(not task.is_correct, "already-correct task passed to fix()")
     task.is_correct = true
-    if task is Main.ComputerWorkTask:
-        # todo: stop them playing solitaire
+    if task is Task.ComputerWork:
         pass
     var main = get_tree().root.get_node("Main")
     # hack: this should be specified out of our instruction type
-    if task is Printer.FormDeliveryTask:
-        if task.form.type == Printer.FormType.Triangle:
+    if task is Task.FormDelivery:
+        if task.form.type == Task.FormType.Triangle:
             for dest in main.find_children("FilingCabinet*"):
                 task.destination = dest
                 break
-            task.destination_type = Printer.Destination.FilingCabinet
+            task.destination_type = Task.Destination.FilingCabinet
         else:
             for dest in main.find_children("Shredder*"):
                 task.destination = dest
                 break
-            task.destination_type = Printer.Destination.Shredder
+            task.destination_type = Task.Destination.Shredder
