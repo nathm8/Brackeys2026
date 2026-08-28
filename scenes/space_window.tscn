@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://b3h7rnnkdvg2p"]
+
+[ext_resource type="Texture2D" uid="uid://c3bx3kkv8qyu8" path="res://resources/space_window.svg" id="1_n0fc0"]
+[ext_resource type="Texture2D" uid="uid://cinkcqbet4l5l" path="res://resources/star.svg" id="2_y6xje"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y6xje"]
+
+[node name="SpaceWindow" type="Node2D" unique_id=1221022350]
+
+[node name="Background" type="NinePatchRect" parent="." unique_id=1065571596]
+self_modulate = Color(0.972549, 0.95686275, 0.5647059, 1)
+material = SubResource("ShaderMaterial_y6xje")
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("1_n0fc0")
+patch_margin_left = 40
+patch_margin_top = 40
+patch_margin_right = 40
+patch_margin_bottom = 40
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1975596021]
+position = Vector2(23.303925, 370.62674)
+amount = 100
+texture = ExtResource("2_y6xje")
+lifetime = 4.3999999999999995
+preprocess = 10.0
+local_coords = true
+emission_shape = 3
+emission_rect_extents = Vector2(1, 330)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 225.0
+initial_velocity_max = 275.0
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="." unique_id=1017931487]
+position = Vector2(23.303925, 370.62674)
+amount = 100
+texture = ExtResource("2_y6xje")
+lifetime = 3.1999999999999997
+preprocess = 10.0
+local_coords = true
+emission_shape = 3
+emission_rect_extents = Vector2(1, 330)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 325.0
+initial_velocity_max = 375.0

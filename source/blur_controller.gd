@@ -1,10 +1,10 @@
 extends Node2D
 
 func _ready():
-    get_node("CanvasLayer/ColorRect").color.a = 1
-    get_node("CanvasLayer2/ColorRect").color.a = 1
-    get_node("CanvasLayer/ColorRect").material.set_shader_parameter("enabled", true)
-    get_node("CanvasLayer2/ColorRect").material.set_shader_parameter("enabled", true)
+    get_node("CanvasLayer/ColorRect").color.a = 1 if Globals.shader_enabled else 0
+    get_node("CanvasLayer2/ColorRect").color.a = 1 if Globals.shader_enabled else 0
+    get_node("CanvasLayer/ColorRect").material.set_shader_parameter("enabled", Globals.shader_enabled)
+    get_node("CanvasLayer2/ColorRect").material.set_shader_parameter("enabled", Globals.shader_enabled)
 
     # normalise camera pos to [0, 1]
     var camera_pos = get_tree().root.get_node("Main/Blur/Office/Camera").global_position

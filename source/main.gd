@@ -17,7 +17,7 @@ var tasks_failed = 0
 var speed_modifier = 1.0
 var tween
 
-@export var quota_time = 120.0
+@export var quota_time = 150.0
 var is_finalised = false
 
 func _ready():
@@ -85,7 +85,7 @@ func finalise(win):
     if win:
         get_node("Scorescreen/Button").text = "Next Level"
         # todo: load next scene
-        get_node("Scorescreen/Button").pressed.connect(func f(): get_tree().reload_current_scene())
+        get_node("Scorescreen/Button").pressed.connect(func f(): get_tree().change_scene_to_file("res://scenes/interstitial1.tscn"))
         blurb = "Quota met!"
     else:
         get_node("Scorescreen/Button").text = "Try Again"

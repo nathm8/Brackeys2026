@@ -6,6 +6,9 @@
 font_size = 32
 font_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1jqu"]
+bg_color = Color(0.09019608, 0.09019608, 0.09019608, 1)
+
 [node name="Scorescreen" type="NinePatchRect" unique_id=1817285880]
 self_modulate = Color(0.972549, 0.95686275, 0.5647059, 1)
 offset_left = -347.0
@@ -40,4 +43,5 @@ offset_left = 280.0
 offset_top = 277.0
 offset_right = 414.0
 offset_bottom = 331.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_f1jqu")
 text = "Try Again"

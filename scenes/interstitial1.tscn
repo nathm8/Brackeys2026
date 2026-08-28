@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cqyntwrs7keka"]
+
+[ext_resource type="Texture2D" uid="uid://dk2cfg0okwnng" path="res://resources/office_background.svg" id="1_ni1yv"]
+[ext_resource type="Script" uid="uid://dks2cswsh3m1g" path="res://source/interstitial1.gd" id="2_0kdkl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ni1yv"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ni1yv"]
+bg_color = Color(0.09019608, 0.09019608, 0.09019608, 1)
+
+[node name="Interstitial" type="NinePatchRect" unique_id=1607488397]
+self_modulate = Color(0.972549, 0.95686275, 0.5647059, 1)
+offset_left = 217.0
+offset_top = 194.0
+offset_right = 1045.0
+offset_bottom = 526.0
+texture = ExtResource("1_ni1yv")
+patch_margin_left = 40
+patch_margin_top = 40
+patch_margin_right = 40
+patch_margin_bottom = 40
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+script = ExtResource("2_0kdkl")
+
+[node name="Text" type="Label" parent="." unique_id=778857388]
+layout_mode = 0
+offset_left = 301.0
+offset_top = 117.0
+offset_right = 495.0
+offset_bottom = 162.0
+text = "Instructions:"
+label_settings = SubResource("LabelSettings_ni1yv")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=2014129286]
+layout_mode = 0
+offset_left = 333.0
+offset_top = 242.0
+offset_right = 467.0
+offset_bottom = 296.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_ni1yv")
+text = "Continue"

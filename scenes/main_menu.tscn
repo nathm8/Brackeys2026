@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://vv4vb2tv8eis"]
+
+[ext_resource type="Script" uid="uid://l3hswtr6wt2h" path="res://source/main_menu.gd" id="1_bqqt6"]
+[ext_resource type="PackedScene" uid="uid://b3h7rnnkdvg2p" path="res://scenes/space_window.tscn" id="1_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://dk2cfg0okwnng" path="res://resources/office_background.svg" id="2_bqqt6"]
+[ext_resource type="PackedScene" uid="uid://dirpdkxyfslhk" path="res://scenes/camera.tscn" id="4_wu84c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu84c"]
+bg_color = Color(0.09019608, 0.09019608, 0.09019608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekxnf"]
+bg_color = Color(0.09019608, 0.09019608, 0.09019608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqqt6"]
+bg_color = Color(0.09019608, 0.09019608, 0.09019608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ln24"]
+bg_color = Color(0.09019608, 0.09019608, 0.09019608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rtw2f"]
+bg_color = Color(0.09019608, 0.09019608, 0.09019608, 1)
+
+[node name="MainMenu" type="Node2D" unique_id=112360066]
+script = ExtResource("1_bqqt6")
+
+[node name="SpaceWindow" parent="." unique_id=1221022350 instance=ExtResource("1_ekxnf")]
+
+[node name="Background" type="NinePatchRect" parent="." unique_id=17602557]
+self_modulate = Color(0.972549, 0.95686275, 0.5647059, 1)
+offset_left = 256.0
+offset_top = 222.0
+offset_right = 987.0
+offset_bottom = 485.0
+texture = ExtResource("2_bqqt6")
+patch_margin_left = 40
+patch_margin_top = 40
+patch_margin_right = 40
+patch_margin_bottom = 40
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Start" type="Button" parent="." unique_id=1097773251]
+offset_left = 429.0
+offset_top = 331.0
+offset_right = 534.0
+offset_bottom = 385.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_wu84c")
+text = "Start"
+
+[node name="LevelSelect" type="Button" parent="." unique_id=298039426]
+offset_left = 574.0
+offset_top = 331.0
+offset_right = 679.0
+offset_bottom = 385.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_wu84c")
+text = "Level Select"
+
+[node name="Options" type="Button" parent="." unique_id=702251719]
+offset_left = 717.0
+offset_top = 331.0
+offset_right = 822.0
+offset_bottom = 385.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_wu84c")
+text = "Options"
+
+[node name="LevelPanel" type="Control" parent="." unique_id=787138256]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LevelOne" type="Button" parent="LevelPanel" unique_id=821797711]
+layout_mode = 0
+offset_left = 287.0
+offset_top = 401.0
+offset_right = 392.0
+offset_bottom = 455.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_wu84c")
+text = "Level One"
+
+[node name="LevelTwo" type="Button" parent="LevelPanel" unique_id=373933350]
+layout_mode = 0
+offset_left = 429.0
+offset_top = 401.0
+offset_right = 534.0
+offset_bottom = 455.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_wu84c")
+text = "Level Two"
+
+[node name="LevelThree" type="Button" parent="LevelPanel" unique_id=627267602]
+layout_mode = 0
+offset_left = 574.0
+offset_top = 401.0
+offset_right = 679.0
+offset_bottom = 455.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_wu84c")
+text = "Level Three"
+
+[node name="LevelFour" type="Button" parent="LevelPanel" unique_id=1818791858]
+layout_mode = 0
+offset_left = 717.0
+offset_top = 401.0
+offset_right = 822.0
+offset_bottom = 455.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_wu84c")
+text = "Level Four"
+
+[node name="LevelFive" type="Button" parent="LevelPanel" unique_id=1428018179]
+layout_mode = 0
+offset_left = 851.0
+offset_top = 401.0
+offset_right = 956.0
+offset_bottom = 455.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_wu84c")
+text = "Level Five"
+
+[node name="OptionsPanel" type="Control" parent="." unique_id=764269094]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CheckButton" type="CheckButton" parent="OptionsPanel" unique_id=191747018]
+layout_mode = 0
+offset_left = 542.0
+offset_top = 401.0
+offset_right = 709.0
+offset_bottom = 431.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bqqt6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8ln24")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_rtw2f")
+button_pressed = true
+text = "Toggle Shaders"
+alignment = 1
+
+[node name="Camera" parent="." unique_id=107067258 instance=ExtResource("4_wu84c")]
+position = Vector2(622, 266)

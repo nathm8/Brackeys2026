@@ -2,13 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://dk2cfg0okwnng" path="res://resources/office_background.svg" id="1_nak1r"]
 [ext_resource type="PackedScene" uid="uid://1boym6kr2645" path="res://scenes/monitor.tscn" id="2_kbsdr"]
-[ext_resource type="Texture2D" uid="uid://clnqx8velj6cd" path="res://resources/monitor_off.svg" id="3_db0g3"]
 [ext_resource type="PackedScene" uid="uid://bjanwt8bty6ok" path="res://scenes/printer.tscn" id="4_qyy6v"]
-[ext_resource type="Texture2D" uid="uid://chjjw0bs8c1um" path="res://resources/printer.svg" id="5_v2thg"]
 [ext_resource type="PackedScene" uid="uid://bn6c0s3tm32ot" path="res://scenes/shredder.tscn" id="6_5w4s8"]
-[ext_resource type="Texture2D" uid="uid://cx0s8oo3071gr" path="res://resources/shredder.svg" id="7_18aay"]
 [ext_resource type="PackedScene" uid="uid://nj6soaiqevc2" path="res://scenes/filing_cabinet.tscn" id="8_ts64q"]
-[ext_resource type="Texture2D" uid="uid://b5ei553q68l2y" path="res://resources/filing_cabinet.svg" id="9_jjcrf"]
+[ext_resource type="PackedScene" uid="uid://b3h7rnnkdvg2p" path="res://scenes/space_window.tscn" id="8_w0vsu"]
 [ext_resource type="PackedScene" uid="uid://cf61o7rv0f8lf" path="res://scenes/employee.tscn" id="10_l83iu"]
 [ext_resource type="PackedScene" uid="uid://dirpdkxyfslhk" path="res://scenes/camera.tscn" id="11_ukxrb"]
 
@@ -27,30 +24,25 @@ patch_margin_right = 40
 patch_margin_bottom = 40
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Monitor0" parent="." unique_id=1986725704 instance=ExtResource("2_kbsdr")]
-position = Vector2(-166.71172, -40.396973)
-texture = ExtResource("3_db0g3")
+position = Vector2(-166.71172, 49.603027)
 
 [node name="Monitor1" parent="." unique_id=369266240 instance=ExtResource("2_kbsdr")]
-position = Vector2(-1.187149, -40.396973)
-texture = ExtResource("3_db0g3")
+position = Vector2(-1.187149, 49.603027)
 
 [node name="Monitor2" parent="." unique_id=1343537776 instance=ExtResource("2_kbsdr")]
-position = Vector2(157.71645, -40.396973)
-texture = ExtResource("3_db0g3")
+position = Vector2(157.71645, 49.603027)
 
 [node name="Printer" parent="." unique_id=882071107 instance=ExtResource("4_qyy6v")]
-position = Vector2(-404.2268, -282.40552)
-texture = ExtResource("5_v2thg")
+position = Vector2(-404.2268, -119.40552)
 
 [node name="Shredder" parent="." unique_id=1776859560 instance=ExtResource("6_5w4s8")]
 position = Vector2(-410.55106, 285.75705)
-texture = ExtResource("7_18aay")
 
 [node name="FilingCabinet" parent="." unique_id=1611268436 instance=ExtResource("8_ts64q")]
-position = Vector2(419.99997, -241.99998)
-texture = ExtResource("9_jjcrf")
+position = Vector2(419.99997, -77.999985)
 
 [node name="Employee1" parent="." unique_id=650243236 instance=ExtResource("10_l83iu")]
 position = Vector2(-180.09073, 100.63894)
@@ -63,3 +55,11 @@ position = Vector2(145.66162, 97.99055)
 
 [node name="Camera" parent="." unique_id=107067258 instance=ExtResource("11_ukxrb")]
 position = Vector2(-0.32419538, -311.86206)
+
+[node name="SpaceWindow" parent="." unique_id=1065571596 instance=ExtResource("8_w0vsu")]
+position = Vector2(-492, -346)
+scale = Vector2(0.35, 0.2)
+
+[node name="SpaceWindow2" parent="." unique_id=1221022350 instance=ExtResource("8_w0vsu")]
+position = Vector2(44.99997, -346)
+scale = Vector2(0.35, 0.2)
