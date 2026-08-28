@@ -40,6 +40,8 @@ func _process(_delta: float):
         finalise(false)
 
 func _unhandled_input(event):
+    if not OS.get_cmdline_args().has("debug"):
+        return
     if event is InputEventKey:
         if event.pressed and event.keycode == KEY_ESCAPE:
             get_tree().quit()

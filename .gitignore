@@ -4,3 +4,4 @@
 .secrets/
 /android/
 /binaries
+build_and_publish.sh
