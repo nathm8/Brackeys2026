@@ -70,7 +70,10 @@ shortcut = SubResource("Shortcut_cg8om")
 text = "3) Shred Square Forms"
 
 [node name="Timer" parent="." unique_id=245550557 instance=ExtResource("3_nhge4")]
-position = Vector2(0, -280)
+offset_left = -56.999996
+offset_top = -334.00003
+offset_right = 107.0
+offset_bottom = -170.00003
 scale = Vector2(0.7, 0.7)
 
 [node name="Button" parent="." unique_id=882771286 instance=ExtResource("4_cg8om")]

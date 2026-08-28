@@ -17,7 +17,8 @@ var tasks_failed = 0
 var score_text = "Done!
 Correctly done tasks: %s / %s
 Tasks failed: %s / %s
-Time taken: %s seconds"
+Time taken: %s seconds
+Quota: %s"
 
 var speed_modifier = 1.0
 var tween
@@ -45,9 +46,9 @@ func _unhandled_input(event):
         if event.pressed and event.keycode == KEY_ENTER:
             get_tree().reload_current_scene()
         
-func get_task():
+func get_task(employee):
     if to_do.size() == 0:
-        return Task.ComputerWork.new(self)
+        return Task.ComputerWork.new(self, employee)
     return to_do.pop_front()
 
 func add_task(task):

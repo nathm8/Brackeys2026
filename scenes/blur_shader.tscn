@@ -15,6 +15,7 @@ shader = ExtResource("2_jmccm")
 shader_parameter/camera_pos = Vector2(0, 0)
 shader_parameter/mouse_pos = Vector2(0, 0)
 shader_parameter/enabled = false
+shader_parameter/red_bias = 0.0
 
 [node name="Blur" type="Node2D" unique_id=85190629]
 script = ExtResource("1_hqrdb")

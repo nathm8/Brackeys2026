@@ -3,9 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bo2x42fb22dj4" path="res://resources/timer.svg" id="1_5r2fa"]
 [ext_resource type="Script" uid="uid://ksjohbhhbn0d" path="res://source/timer.gd" id="2_5r2fa"]
 
-[node name="Timer" type="Node2D" unique_id=2000907565]
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=559533282]
+[node name="TextureProgressBar" type="TextureProgressBar" unique_id=559533282]
 offset_left = -82.0
 offset_top = -82.0
 offset_right = 82.0

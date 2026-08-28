@@ -36,9 +36,9 @@ func _ready():
     # have the area2D child call our input_event
     get_node("Area2D").input_event.connect(func(_v, e, _s): input_event(e))
 
-func _process(delta: float) -> void:
+func _process(delta):
     if current_task == null:
-        current_task = get_tree().root.get_node("Main").get_task()
+        current_task = get_tree().root.get_node("Main").get_task(self)
     if current_task.execute(delta, self):
         current_task = null
     # directionality

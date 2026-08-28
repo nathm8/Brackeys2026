@@ -7,7 +7,7 @@ func _ready():
     get_node("CanvasLayer2/ColorRect").material.set_shader_parameter("enabled", true)
 
     # normalise camera pos to [0, 1]
-    var camera_pos = get_tree().root.get_node("Main/Office/Camera").global_position
+    var camera_pos = get_tree().root.get_node("Main/Blur/Office/Camera").global_position
     var size = get_viewport().get_visible_rect().size
     camera_pos.x /= size.x
     camera_pos.y /= size.y

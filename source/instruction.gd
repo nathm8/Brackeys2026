@@ -60,6 +60,7 @@ func fix(task):
     var main = get_tree().root.get_node("Main")
     # hack: this should be specified out of our instruction type
     if task is Task.FormDelivery:
+        task.time_to_complete = 1
         if task.form.type == Task.FormType.Triangle:
             for dest in main.find_children("FilingCabinet*"):
                 task.destination = dest

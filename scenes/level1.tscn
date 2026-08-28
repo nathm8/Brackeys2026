@@ -11,8 +11,11 @@ font_color = Color(0, 0, 0, 1)
 [node name="Main" type="Node2D" unique_id=318863329]
 script = ExtResource("1_ru4tf")
 
-[node name="Office" parent="." unique_id=1930234121 instance=ExtResource("2_6sh32")]
-position = Vector2(500, 356)
+[node name="Blur" parent="." unique_id=85190629 instance=ExtResource("4_bbk5w")]
+position = Vector2(1, 0)
+
+[node name="Office" parent="Blur" unique_id=1930234121 instance=ExtResource("2_6sh32")]
+position = Vector2(499, 356)
 
 [node name="RulesBackground" parent="." unique_id=318147905 instance=ExtResource("3_ejswk")]
 position = Vector2(1140, 356)
@@ -24,7 +27,3 @@ offset_right = 1254.0
 offset_bottom = 622.0
 label_settings = SubResource("LabelSettings_sugp2")
 horizontal_alignment = 1
-
-[node name="Blur" parent="." unique_id=85190629 instance=ExtResource("4_bbk5w")]
-visible = false
-position = Vector2(1, 0)

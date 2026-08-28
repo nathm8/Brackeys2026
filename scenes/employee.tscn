@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dim77jp2kcesm" path="res://resources/union_vest2.svg" id="4_crjcn"]
 [ext_resource type="Texture2D" uid="uid://p8h5ery6vfse" path="res://resources/manager_hat.svg" id="6_jtbt0"]
 [ext_resource type="FontFile" uid="uid://1h8k8h1xtbjb" path="res://resources/FreeSerif.ttf" id="7_xhek5"]
+[ext_resource type="PackedScene" uid="uid://dmax1tinf8i5b" path="res://scenes/countdown_timer.tscn" id="9_uqt58"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qe1e8"]
 font = ExtResource("7_xhek5")
@@ -81,3 +82,11 @@ text = "!"
 label_settings = SubResource("LabelSettings_xhek5")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Timer" parent="." unique_id=2000907565 instance=ExtResource("9_uqt58")]
+visible = false
+offset_left = -15.999999
+offset_top = -60.000004
+offset_right = 148.0
+offset_bottom = 104.0
+scale = Vector2(0.2, 0.2)
