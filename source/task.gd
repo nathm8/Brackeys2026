@@ -16,15 +16,15 @@ class ComputerWork:
         is_correct = randi() % 10 != 0
 
         var min_d = 1000
+        var closest_monitor
         for monitor in main.find_children("Monitor?"):
             if not monitor.in_use:
-
                 var d = employee.position.distance_to(monitor.position)
-                min_d = d if d < min_d else min_d
-
-                monitor_node = monitor
-                monitor.in_use = true
-                break
+                if d < min_d:
+                    min_d = d
+                    closest_monitor = monitor
+        monitor_node = closest_monitor
+        closest_monitor.in_use = true
 
     func execute(delta, _e):
         var speed_modifier = main.speed_modifier * employee.speed_modifier
@@ -51,7 +51,6 @@ class ComputerWork:
         monitor_node.set_off()
         monitor_node = null
         time_to_complete = full_time_to_complete
-        # todo: buffer print jobs
         for printer in main.find_children("Printer*"):
             if not printer.is_full():
                 printer.print()
@@ -98,7 +97,7 @@ class FormDelivery:
                 printer.form = null
                 form.reparent(employee, true)
                 form.create_tween().tween_property(form, "position", Vector2(10, 40), 0.2)
-                form.create_tween().tween_property(form, "rotation", PI+PI/4, 0.2)
+                form.create_tween().tween_property(form, "rotation", PI/4, 0.2)
             else:
                 employee.position -= speed_modifier * delta * 100 * (employee.global_position - form.global_position).normalized()
         else:

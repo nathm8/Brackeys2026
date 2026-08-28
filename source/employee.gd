@@ -43,9 +43,9 @@ func _process(delta):
         current_task = null
     # directionality
     if position.x < previous_x:
-        scale = Vector2(-1, 1)
+        get_node("EmployeeHead").scale = Vector2(-1, 1)
     elif position.x > previous_x:
-        scale = Vector2(1, 1)
+        get_node("EmployeeHead").scale = Vector2(1, 1)
     previous_x = position.x
 
 func input_event(event):

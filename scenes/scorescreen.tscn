@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cs7ed0ykrh2m"]
+
+[ext_resource type="Texture2D" uid="uid://dk2cfg0okwnng" path="res://resources/office_background.svg" id="1_ufrfr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_f1jqu"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[node name="Scorescreen" type="NinePatchRect" unique_id=1817285880]
+self_modulate = Color(0.972549, 0.95686275, 0.5647059, 1)
+offset_left = -347.0
+offset_top = -177.0
+offset_right = 346.0
+offset_bottom = 178.0
+texture = ExtResource("1_ufrfr")
+patch_margin_left = 40
+patch_margin_top = 40
+patch_margin_right = 40
+patch_margin_bottom = 40
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Text" type="Label" parent="." unique_id=406700727]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 28.0
+offset_right = 572.0
+offset_bottom = 265.0
+text = "%s
+Correctly done tasks: %s / %s
+Tasks failed: %s / %s
+Time taken: %s seconds
+Quota: %s seconds"
+label_settings = SubResource("LabelSettings_f1jqu")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=975869658]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 277.0
+offset_right = 414.0
+offset_bottom = 331.0
+text = "Try Again"

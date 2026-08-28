@@ -1,4 +1,8 @@
 extends TextureProgressBar
 
+# used in main.finalise
+var paused = false
+
 func _process(delta):
-    value -= delta
+    if not paused:
+        value -= delta

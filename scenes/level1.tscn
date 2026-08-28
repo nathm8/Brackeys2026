@@ -4,9 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dtvfxddbafu0u" path="res://scenes/level1office.tscn" id="2_6sh32"]
 [ext_resource type="PackedScene" uid="uid://30almci084ms" path="res://scenes/level1rules.tscn" id="3_ejswk"]
 [ext_resource type="PackedScene" uid="uid://xd33kc38ua0f" path="res://scenes/blur_shader.tscn" id="4_bbk5w"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_sugp2"]
-font_color = Color(0, 0, 0, 1)
+[ext_resource type="PackedScene" uid="uid://cs7ed0ykrh2m" path="res://scenes/scorescreen.tscn" id="5_ru4tf"]
 
 [node name="Main" type="Node2D" unique_id=318863329]
 script = ExtResource("1_ru4tf")
@@ -17,13 +15,12 @@ position = Vector2(1, 0)
 [node name="Office" parent="Blur" unique_id=1930234121 instance=ExtResource("2_6sh32")]
 position = Vector2(499, 356)
 
-[node name="RulesBackground" parent="." unique_id=318147905 instance=ExtResource("3_ejswk")]
+[node name="Rules" parent="." unique_id=318147905 instance=ExtResource("3_ejswk")]
 position = Vector2(1140, 356)
 
-[node name="Score" type="Label" parent="." unique_id=2015832042]
-offset_left = 1029.0
-offset_top = 568.0
-offset_right = 1254.0
-offset_bottom = 622.0
-label_settings = SubResource("LabelSettings_sugp2")
-horizontal_alignment = 1
+[node name="Scorescreen" parent="." unique_id=1817285880 instance=ExtResource("5_ru4tf")]
+visible = false
+offset_left = 165.0
+offset_top = 186.0
+offset_right = 858.0
+offset_bottom = 541.0
