@@ -1,20 +1,27 @@
 [gd_scene format=3 uid="uid://cau3bslrohfxw"]
 
 [ext_resource type="Texture2D" uid="uid://d3rns730c2fki" path="res://resources/pause.svg" id="1_5rmv1"]
+[ext_resource type="Script" uid="uid://dm4ym86sfx00r" path="res://source/pause.gd" id="2_rh5fn"]
 
-[node name="Control" type="Control" unique_id=959028317]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5rmv1"]
+bg_color = Color(0.09019608, 0.09019608, 0.09019608, 1)
 
-[node name="Button" type="Button" parent="." unique_id=882771286]
-layout_mode = 0
-offset_left = -46.0
-offset_top = -54.0
-offset_right = 46.0
-offset_bottom = 55.0
+[sub_resource type="InputEventKey" id="InputEventKey_rh5fn"]
+device = -1
+keycode = 32
+unicode = 32
+
+[sub_resource type="Shortcut" id="Shortcut_thq0x"]
+events = [SubResource("InputEventKey_rh5fn")]
+
+[node name="Button" type="Button" unique_id=882771286]
+offset_left = -26.0
+offset_top = -30.0
+offset_right = 26.0
+offset_bottom = 31.608696
+theme_override_styles/normal = SubResource("StyleBoxFlat_5rmv1")
 toggle_mode = true
+shortcut = SubResource("Shortcut_thq0x")
 icon = ExtResource("1_5rmv1")
+icon_alignment = 1
+script = ExtResource("2_rh5fn")
