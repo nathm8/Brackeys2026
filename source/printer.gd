@@ -78,25 +78,31 @@ class FormDeliveryTask:
             break
 
     func execute(delta, employee):
+        var speed_modifier = main.speed_modifier * employee.speed_modifier
         if not picked_up:
             if employee.global_position.distance_to(form.global_position) < 10:
                 picked_up = true
                 printer.form = null
                 form.reparent(employee, true)
                 form.create_tween().tween_property(form, "position", Vector2(10, 40), 0.2)
-                form.create_tween().tween_property(form, "rotation", PI/4, 0.2)
+                form.create_tween().tween_property(form, "rotation", PI+PI/4, 0.2)
             else:
-                employee.position -= employee.speed_modifier * delta * 100 * (employee.global_position - form.global_position).normalized()
+                employee.position -= speed_modifier * delta * 100 * (employee.global_position - form.global_position).normalized()
         else:
             if employee.position.distance_to(destination.position) < 10:
-                time_to_complete -= delta
+                time_to_complete -= speed_modifier * delta
                 if time_to_complete <= 0:
-                    finish()
+                    finish(employee)
                     return true
             else:
-                employee.position -= employee.speed_modifier * delta * 100 * (employee.position - destination.position).normalized()
+                employee.position -= speed_modifier * delta * 100 * (employee.position - destination.position).normalized()
         return false
 
-    func finish():
+    func finish(employee):
         form.queue_free()
         main.task_finished(is_correct)
+        if not is_correct:
+            employee.get_node("MistakeLabel").visible = true
+            var tween = employee.create_tween()
+            tween.tween_interval(1)
+            tween.tween_callback(func f(): employee.get_node("MistakeLabel").visible = false)

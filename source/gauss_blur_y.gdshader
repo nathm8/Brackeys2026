@@ -4,6 +4,7 @@ uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_n
 uniform vec2 camera_pos;
 uniform vec2 mouse_pos;
 uniform bool enabled;
+uniform float red_bias;
 
 // https://en.wikipedia.org/wiki/Distance_from_a_point_to_a_line#Line_defined_by_two_points
 // distance to the line between mouse and camera
@@ -59,7 +60,8 @@ void fragment() {
             COLOR.xyz = col;
 
             float noise = dist*(random(SCREEN_UV + TIME) * 2.0 - 1.0);
-            COLOR.r += 0.5*noise;
+            // COLOR.r += pow(0.5*noise, red_bias + 1.0);
+            COLOR.r += 0.5*noise + red_bias;
             noise = dist*(random(SCREEN_UV + 1.2*TIME) * 2.0 - 1.0);
             COLOR.g += 0.5*noise;
             noise = dist*(random(SCREEN_UV + 1.4*TIME) * 2.0 - 1.0);

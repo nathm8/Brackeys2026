@@ -6,7 +6,7 @@ var total_incorrect_task_number = 5
 var total_correct_task_number = 10
 
 var incorrect_task_number = 5
-var correct_task_number = 10
+var correct_task_number = 0
 var do_task_correctly = []
 
 # list of tasks that require doing
@@ -19,7 +19,11 @@ Correctly done tasks: %s / %s
 Tasks failed: %s / %s
 Time taken: %s seconds"
 
+var speed_modifier = 1.0
+var tween
+
 var total_time = 0.0
+var is_paused = false
 
 func _ready():
     for _x in incorrect_task_number:
@@ -30,6 +34,9 @@ func _ready():
 
 func _process(delta: float):
     total_time += delta
+    var red_bias = 1 - speed_modifier
+    red_bias = 0.5 if red_bias > 0.4 else pow(red_bias, 3)
+    get_node("Blur/CanvasLayer2/ColorRect").material.set_shader_parameter("red_bias", red_bias)
 
 func _unhandled_input(event):
     if event is InputEventKey:
@@ -51,6 +58,11 @@ func task_finished(was_correct):
         tasks_accomplished += 1
     else:
         tasks_failed += 1
+        speed_modifier = 0.5
+        if tween != null:
+            tween.kill()
+        tween = create_tween()
+        tween.tween_property(self, "speed_modifier", 1.0, 5)
     if tasks_accomplished + tasks_failed == total_correct_task_number + total_incorrect_task_number:
         get_node("Score").text = score_text % [str(tasks_accomplished), str(total_correct_task_number + total_incorrect_task_number), str(tasks_failed), str(total_incorrect_task_number), str(round(total_time))]
         # print(total_time)
@@ -74,17 +86,18 @@ class ComputerWorkTask:
                 break
 
     func execute(delta, employee):
+        var speed_modifier = main.speed_modifier * employee.speed_modifier
         if employee.position.distance_to(monitor_node.position) < 10:
             if is_correct:
                 monitor_node.set_working()
-                time_to_complete -= delta
+                time_to_complete -= speed_modifier * delta
                 if time_to_complete <= 0:
                     finish()
                     return true
             else:
                 monitor_node.set_slacking()
         else:
-            employee.position -= employee.speed_modifier * delta * 100 * (employee.position - monitor_node.position).normalized()
+            employee.position -= speed_modifier * delta * 100 * (employee.position - monitor_node.position).normalized()
         return false
 
     func finish():

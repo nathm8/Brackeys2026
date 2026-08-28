@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://dtvfxddbafu0u" path="res://scenes/level1office.tscn" id="2_6sh32"]
 [ext_resource type="PackedScene" uid="uid://30almci084ms" path="res://scenes/level1rules.tscn" id="3_ejswk"]
 [ext_resource type="PackedScene" uid="uid://xd33kc38ua0f" path="res://scenes/blur_shader.tscn" id="4_bbk5w"]
-[ext_resource type="PackedScene" uid="uid://dmax1tinf8i5b" path="res://scenes/countdown_timer.tscn" id="5_conm7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_sugp2"]
 font_color = Color(0, 0, 0, 1)
@@ -29,11 +28,3 @@ horizontal_alignment = 1
 [node name="Blur" parent="." unique_id=85190629 instance=ExtResource("4_bbk5w")]
 visible = false
 position = Vector2(1, 0)
-
-[node name="Timer" parent="." unique_id=245550557 instance=ExtResource("5_conm7")]
-visible = false
-offset_left = 1137.0
-offset_top = 95.0
-offset_right = 1137.0
-offset_bottom = 95.0
-scale = Vector2(2, 2)

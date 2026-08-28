@@ -1,23 +1,18 @@
 [gd_scene format=3 uid="uid://dmax1tinf8i5b"]
 
-[ext_resource type="Texture2D" uid="uid://c63bdnureur2f" path="res://resources/employee_head.svg" id="1_d7c0i"]
+[ext_resource type="Texture2D" uid="uid://bo2x42fb22dj4" path="res://resources/timer.svg" id="1_5r2fa"]
 [ext_resource type="Script" uid="uid://ksjohbhhbn0d" path="res://source/timer.gd" id="2_5r2fa"]
 
-[node name="Timer" type="Control" unique_id=245550557]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Timer" type="Node2D" unique_id=2000907565]
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=559533282]
-layout_mode = 0
-offset_left = -24.0
-offset_top = -24.0
-offset_right = 25.0
-offset_bottom = 25.0
-max_value = 30.0
+offset_left = -82.0
+offset_top = -82.0
+offset_right = 82.0
+offset_bottom = 82.0
+max_value = 120.0
 step = 0.0
-value = 30.0
-fill_mode = 4
-texture_progress = ExtResource("1_d7c0i")
+value = 120.0
+fill_mode = 5
+texture_progress = ExtResource("1_5r2fa")
 script = ExtResource("2_5r2fa")

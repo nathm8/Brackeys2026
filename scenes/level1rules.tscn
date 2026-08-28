@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dk2cfg0okwnng" path="res://resources/office_background.svg" id="1_aomae"]
 [ext_resource type="PackedScene" uid="uid://ksws5lqukrj4" path="res://scenes/instruction.tscn" id="2_66h5d"]
+[ext_resource type="PackedScene" uid="uid://dmax1tinf8i5b" path="res://scenes/countdown_timer.tscn" id="3_nhge4"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_aomae"]
 device = -1
@@ -66,3 +67,7 @@ offset_right = 93.058075
 offset_bottom = 113.43945
 shortcut = SubResource("Shortcut_cg8om")
 text = "3) Shred Square Forms"
+
+[node name="Timer" parent="." unique_id=245550557 instance=ExtResource("3_nhge4")]
+position = Vector2(0, -249)
+scale = Vector2(0.7, 0.7)
