@@ -96,6 +96,6 @@ func finalise(win):
         str(total_correct_task_number + total_incorrect_task_number),
         str(tasks_failed),
         str(total_incorrect_task_number),
-        str(round(get_node("Rules/Timer").value)),
+        str(quota_time - round(get_node("Rules/Timer").value)),
         str(round(quota_time))
     ]
