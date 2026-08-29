@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://30almci084ms"]
+
+[ext_resource type="Texture2D" uid="uid://dk2cfg0okwnng" path="res://resources/office_background.svg" id="1_aomae"]
+[ext_resource type="Script" uid="uid://dv44leftg0h3c" path="res://source/ui_panel.gd" id="1_dfook"]
+[ext_resource type="PackedScene" uid="uid://ksws5lqukrj4" path="res://scenes/instruction.tscn" id="2_66h5d"]
+[ext_resource type="PackedScene" uid="uid://dmax1tinf8i5b" path="res://scenes/countdown_timer.tscn" id="3_nhge4"]
+[ext_resource type="PackedScene" path="res://scenes/pause_button.tscn" id="4_cg8om"]
+[ext_resource type="StyleBox" uid="uid://mdixg5q5pmiv" path="res://scenes/button_style_box_normal.tres" id="5_xc6jx"]
+[ext_resource type="StyleBox" uid="uid://db6kqjl6vp8dv" path="res://scenes/button_style_box_pressed.tres" id="6_pn8jl"]
+[ext_resource type="StyleBox" uid="uid://b5bor5hiqrx6x" path="res://scenes/button_style_box_hover.tres" id="7_rxj8x"]
+[ext_resource type="Theme" uid="uid://du0jxeopdrc65" path="res://scenes/default_text.tres" id="8_pn8jl"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_pn8jl"]
+grow_begin = 15.0
+grow_end = 15.0
+thickness = 4
+
+[sub_resource type="Theme" id="Theme_cg8om"]
+Button/constants/outline_size = 4
+
+[sub_resource type="InputEventKey" id="InputEventKey_aomae"]
+device = -1
+keycode = 49
+unicode = 49
+
+[sub_resource type="Shortcut" id="Shortcut_nhge4"]
+events = [SubResource("InputEventKey_aomae")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_nhge4"]
+device = -1
+keycode = 50
+unicode = 50
+
+[sub_resource type="Shortcut" id="Shortcut_rsier"]
+events = [SubResource("InputEventKey_nhge4")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_n8rfu"]
+device = -1
+keycode = 51
+unicode = 51
+
+[sub_resource type="Shortcut" id="Shortcut_cg8om"]
+events = [SubResource("InputEventKey_n8rfu")]
+
+[node name="UIPanel" type="Control" unique_id=1955749401 groups=["ui_panel"]]
+layout_mode = 3
+anchor_left = -0.106000006
+anchor_top = -0.48700002
+anchor_right = 0.108
+anchor_bottom = 0.5
+offset_left = 135.68001
+offset_top = 350.64
+offset_right = 141.76
+offset_bottom = 360.0
+script = ExtResource("1_dfook")
+
+[node name="OfficeBackground" type="NinePatchRect" parent="." unique_id=647117524]
+self_modulate = Color(0.972549, 0.95686275, 0.5647059, 1)
+layout_mode = 0
+offset_right = 280.0
+offset_bottom = 720.0
+texture = ExtResource("1_aomae")
+patch_margin_left = 40
+patch_margin_top = 40
+patch_margin_right = 40
+patch_margin_bottom = 40
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=612470850]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=304578198]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TimerContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=82880908]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="LevelTimer" parent="MarginContainer/VBoxContainer/TimerContainer" unique_id=245550557 instance=ExtResource("3_nhge4")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Button" parent="MarginContainer/VBoxContainer/TimerContainer" unique_id=882771286 instance=ExtResource("4_cg8om")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = ExtResource("5_xc6jx")
+theme_override_styles/pressed = ExtResource("6_pn8jl")
+theme_override_styles/hover = ExtResource("7_rxj8x")
+theme_override_styles/focus = ExtResource("6_pn8jl")
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=937953320]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_pn8jl")
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1922108920]
+layout_mode = 2
+theme = ExtResource("8_pn8jl")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+text = "Rules"
+horizontal_alignment = 1
+
+[node name="RulesContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1927863750]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="Instruction" parent="MarginContainer/VBoxContainer/RulesContainer" unique_id=1828442142 instance=ExtResource("2_66h5d")]
+layout_mode = 2
+theme = SubResource("Theme_cg8om")
+shortcut = SubResource("Shortcut_nhge4")
+text = "1) Work on Computer"
+
+[node name="Instruction2" parent="MarginContainer/VBoxContainer/RulesContainer" unique_id=622066259 instance=ExtResource("2_66h5d")]
+layout_mode = 2
+shortcut = SubResource("Shortcut_rsier")
+text = "2) File Triangle Forms"
+
+[node name="Instruction3" parent="MarginContainer/VBoxContainer/RulesContainer" unique_id=298939147 instance=ExtResource("2_66h5d")]
+layout_mode = 2
+shortcut = SubResource("Shortcut_cg8om")
+text = "3) Shred Square Forms"
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=518863545]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_pn8jl")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=204525487]
+layout_mode = 2
+theme = ExtResource("8_pn8jl")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+text = "Actions"
+horizontal_alignment = 1
+
+[node name="ActionsContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1646307695]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 6
+alignment = 2

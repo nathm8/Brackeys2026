@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://wrw5xnqfuiu4"]
+
+[ext_resource type="StyleBox" uid="uid://mdixg5q5pmiv" path="res://scenes/button_style_box_normal.tres" id="1_rt4q8"]
+[ext_resource type="StyleBox" uid="uid://db6kqjl6vp8dv" path="res://scenes/button_style_box_pressed.tres" id="2_ruj6f"]
+[ext_resource type="StyleBox" uid="uid://b5bor5hiqrx6x" path="res://scenes/button_style_box_hover.tres" id="3_0a5yo"]
+[ext_resource type="Script" uid="uid://w0qgtjdidg5o" path="res://source/ability.gd" id="4_rt4q8"]
+
+[node name="Instruction" type="Button" unique_id=1828442142]
+offset_left = -91.529
+offset_top = -22.719
+offset_right = 91.529076
+offset_bottom = 22.720453
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = ExtResource("1_rt4q8")
+theme_override_styles/pressed = ExtResource("2_ruj6f")
+theme_override_styles/hover = ExtResource("3_0a5yo")
+theme_override_styles/focus = ExtResource("2_ruj6f")
+toggle_mode = true
+script = ExtResource("4_rt4q8")

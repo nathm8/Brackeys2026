@@ -1,15 +1,20 @@
 [gd_scene format=3 uid="uid://ksws5lqukrj4"]
 
+[ext_resource type="StyleBox" uid="uid://mdixg5q5pmiv" path="res://scenes/button_style_box_normal.tres" id="1_0jjx2"]
 [ext_resource type="Script" uid="uid://cvnx7pd3ud2ii" path="res://source/instruction.gd" id="1_maccc"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_maccc"]
-bg_color = Color(0.0908847, 0.0908847, 0.0908847, 1)
+[ext_resource type="StyleBox" uid="uid://db6kqjl6vp8dv" path="res://scenes/button_style_box_pressed.tres" id="2_jgaaj"]
+[ext_resource type="StyleBox" uid="uid://b5bor5hiqrx6x" path="res://scenes/button_style_box_hover.tres" id="3_jgaaj"]
 
 [node name="Instruction" type="Button" unique_id=1828442142]
 offset_left = -91.529
 offset_top = -22.719
 offset_right = 91.529076
 offset_bottom = 22.720453
-theme_override_styles/normal = SubResource("StyleBoxFlat_maccc")
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = ExtResource("1_0jjx2")
+theme_override_styles/pressed = ExtResource("2_jgaaj")
+theme_override_styles/hover = ExtResource("3_jgaaj")
+theme_override_styles/focus = ExtResource("2_jgaaj")
 toggle_mode = true
 script = ExtResource("1_maccc")
