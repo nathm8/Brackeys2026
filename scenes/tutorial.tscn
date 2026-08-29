@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://cqiylbn658q1h"]
+
+[ext_resource type="Script" uid="uid://bagxutv6yfwln" path="res://source/tutorial.gd" id="1_gbqnl"]
+[ext_resource type="PackedScene" uid="uid://xd33kc38ua0f" path="res://scenes/blur_shader.tscn" id="2_ckvwl"]
+[ext_resource type="PackedScene" uid="uid://30almci084ms" path="res://scenes/ui_panel.tscn" id="4_0epgs"]
+[ext_resource type="PackedScene" uid="uid://ksws5lqukrj4" path="res://scenes/instruction.tscn" id="5_g2equ"]
+[ext_resource type="PackedScene" uid="uid://wrw5xnqfuiu4" path="res://scenes/ability.tscn" id="6_tbcdj"]
+[ext_resource type="PackedScene" uid="uid://cs7ed0ykrh2m" path="res://scenes/scorescreen.tscn" id="7_ej4tf"]
+[ext_resource type="PackedScene" uid="uid://b2mv7rgcsjjmt" path="res://scenes/tutorial_office.tscn" id="7_gbqnl"]
+[ext_resource type="PackedScene" uid="uid://dt5u723vt4ols" path="res://scenes/tutorial_indicator.tscn" id="8_ckvwl"]
+
+[node name="Main" type="Node2D" unique_id=318863329]
+script = ExtResource("1_gbqnl")
+
+[node name="Blur" parent="." unique_id=85190629 instance=ExtResource("2_ckvwl")]
+position = Vector2(1, 0)
+
+[node name="Office" parent="Blur" unique_id=961841195 instance=ExtResource("7_gbqnl")]
+position = Vector2(499, 356)
+
+[node name="UIPanel" parent="." unique_id=318147905 instance=ExtResource("4_0epgs")]
+offset_left = 1000.0
+offset_top = 0.0
+offset_right = 1279.0
+offset_bottom = 719.0
+instruction_scene = ExtResource("5_g2equ")
+ability_scene = ExtResource("6_tbcdj")
+
+[node name="Scorescreen" parent="." unique_id=1817285880 instance=ExtResource("7_ej4tf")]
+visible = false
+offset_left = 165.0
+offset_top = 186.0
+offset_right = 858.0
+offset_bottom = 541.0
+
+[node name="TutorialIndicator1" parent="." unique_id=1278952489 instance=ExtResource("8_ckvwl")]
+offset_left = 596.0
+offset_top = 58.0
+offset_right = 810.0
+offset_bottom = 222.0
+
+[node name="Text" parent="TutorialIndicator1/Background" parent_id_path=PackedInt32Array(1278952489, 112207310) index="0" unique_id=2139924629]
+text = "This is the shift clock.
+It is currently paused,
+click the pause icon,
+or press spacebar, to
+begin."
+
+[node name="TutorialIndicator2" parent="." unique_id=1679036888 instance=ExtResource("8_ckvwl")]
+visible = false
+offset_left = 29.0
+offset_top = 159.0
+offset_right = 243.0
+offset_bottom = 348.0
+
+[node name="Text" parent="TutorialIndicator2/Background" parent_id_path=PackedInt32Array(1679036888, 112207310) index="0" unique_id=2139924629]
+text = "Our employee has 
+begun to play solitaire.
+This violates Rule 1.
+Click the rule, or press
+1, and click on the 
+employee."
+
+[node name="TutorialArrowAnchor" parent="TutorialIndicator2/Control" parent_id_path=PackedInt32Array(1679036888, 1467470383) index="0" unique_id=770275375]
+rotation = 0.4660029
+
+[editable path="TutorialIndicator1"]
+[editable path="TutorialIndicator2"]

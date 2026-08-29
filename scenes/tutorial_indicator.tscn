@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://dt5u723vt4ols"]
+
+[ext_resource type="Texture2D" uid="uid://4ebjrv82ttwj" path="res://resources/tutorial_arrow.svg" id="1_01v17"]
+[ext_resource type="Script" uid="uid://bn8qxlfgv46ca" path="res://source/tutorial_indicator.gd" id="1_ql7vg"]
+[ext_resource type="Texture2D" uid="uid://dk2cfg0okwnng" path="res://resources/office_background.svg" id="2_ql7vg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3xqmb"]
+font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[node name="TutorialIndicator" type="Control" unique_id=1278952489]
+process_mode = 3
+layout_mode = 3
+anchor_right = 0.126
+anchor_bottom = 0.36400002
+offset_right = -0.27999878
+offset_bottom = -0.08001709
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ql7vg")
+
+[node name="Background" type="NinePatchRect" parent="." unique_id=112207310]
+self_modulate = Color(0.9254902, 0.8745098, 0.8117647, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ql7vg")
+patch_margin_left = 40
+patch_margin_top = 40
+patch_margin_right = 40
+patch_margin_bottom = 40
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="Label" parent="Background" unique_id=2139924629]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = 19.0
+offset_right = -23.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Tutorial text"
+label_settings = SubResource("LabelSettings_3xqmb")
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="." unique_id=1467470383]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TutorialArrowAnchor" type="Node2D" parent="Control" unique_id=770275375]
+unique_name_in_owner = true
+
+[node name="TutorialArrow" type="Sprite2D" parent="Control/TutorialArrowAnchor" unique_id=2072918326]
+unique_name_in_owner = true
+position = Vector2(234, 0)
+texture = ExtResource("1_01v17")
