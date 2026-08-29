@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bjanwt8bty6ok" path="res://scenes/printer.tscn" id="4_qyy6v"]
 [ext_resource type="PackedScene" uid="uid://bn6c0s3tm32ot" path="res://scenes/shredder.tscn" id="6_5w4s8"]
 [ext_resource type="PackedScene" uid="uid://nj6soaiqevc2" path="res://scenes/filing_cabinet.tscn" id="8_ts64q"]
-[ext_resource type="PackedScene" path="res://scenes/space_window.tscn" id="8_w0vsu"]
+[ext_resource type="PackedScene" uid="uid://b3h7rnnkdvg2p" path="res://scenes/space_window.tscn" id="8_w0vsu"]
 [ext_resource type="PackedScene" uid="uid://cf61o7rv0f8lf" path="res://scenes/employee.tscn" id="10_l83iu"]
 [ext_resource type="PackedScene" uid="uid://dirpdkxyfslhk" path="res://scenes/camera.tscn" id="11_ukxrb"]
 
@@ -44,15 +44,6 @@ position = Vector2(-410.55106, 285.75705)
 [node name="FilingCabinet" parent="." unique_id=1611268436 instance=ExtResource("8_ts64q")]
 position = Vector2(419.99997, -77.999985)
 
-[node name="Employee1" parent="." unique_id=650243236 instance=ExtResource("10_l83iu")]
-position = Vector2(-180.09073, 100.63894)
-
-[node name="Employee2" parent="." unique_id=650562611 instance=ExtResource("10_l83iu")]
-position = Vector2(-7.9451795, 97.99055)
-
-[node name="Employee3" parent="." unique_id=757801071 instance=ExtResource("10_l83iu")]
-position = Vector2(145.66162, 97.99055)
-
 [node name="Camera" parent="." unique_id=107067258 instance=ExtResource("11_ukxrb")]
 position = Vector2(-0.32419538, -311.86206)
 
@@ -63,3 +54,12 @@ scale = Vector2(0.35, 0.2)
 [node name="SpaceWindow2" parent="." unique_id=1221022350 instance=ExtResource("8_w0vsu")]
 position = Vector2(44.99997, -346)
 scale = Vector2(0.35, 0.2)
+
+[node name="Employee1" parent="." unique_id=650243236 instance=ExtResource("10_l83iu")]
+position = Vector2(-180.09073, 100.63894)
+
+[node name="Employee2" parent="." unique_id=650562611 instance=ExtResource("10_l83iu")]
+position = Vector2(-7.9451795, 97.99055)
+
+[node name="Employee3" parent="." unique_id=757801071 instance=ExtResource("10_l83iu")]
+position = Vector2(145.66162, 97.99055)

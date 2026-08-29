@@ -38,9 +38,6 @@ position = Vector2(-158, 298)
 [node name="FilingCabinet" parent="." unique_id=1611268436 instance=ExtResource("5_4atam")]
 position = Vector2(159, 273)
 
-[node name="Employee" parent="." unique_id=650562611 instance=ExtResource("6_63p7y")]
-position = Vector2(-7.9451795, 97.99055)
-
 [node name="Camera" parent="." unique_id=107067258 instance=ExtResource("7_2ksw3")]
 position = Vector2(-0.32419538, -311.86206)
 
@@ -51,3 +48,6 @@ scale = Vector2(0.35, 0.2)
 [node name="SpaceWindow2" parent="." unique_id=1221022350 instance=ExtResource("8_86u0b")]
 position = Vector2(44.99997, -346)
 scale = Vector2(0.35, 0.2)
+
+[node name="Employee" parent="." unique_id=650562611 instance=ExtResource("6_63p7y")]
+position = Vector2(-7.9451795, 97.99055)

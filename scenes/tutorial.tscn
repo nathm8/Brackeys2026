@@ -11,6 +11,9 @@
 
 [node name="Main" type="Node2D" unique_id=318863329]
 script = ExtResource("1_gbqnl")
+total_incorrect_task_number = 1
+total_correct_task_number = 0
+quota_time = 120.0
 
 [node name="Blur" parent="." unique_id=85190629 instance=ExtResource("2_ckvwl")]
 position = Vector2(1, 0)
@@ -19,10 +22,14 @@ position = Vector2(1, 0)
 position = Vector2(499, 356)
 
 [node name="UIPanel" parent="." unique_id=318147905 instance=ExtResource("4_0epgs")]
+anchor_left = -0.106000006
+anchor_top = -0.48700002
+anchor_right = 0.108
+anchor_bottom = 0.5
 offset_left = 1000.0
-offset_top = 0.0
 offset_right = 1279.0
 offset_bottom = 719.0
+grow_vertical = 1
 instruction_scene = ExtResource("5_g2equ")
 ability_scene = ExtResource("6_tbcdj")
 
@@ -64,5 +71,39 @@ employee."
 [node name="TutorialArrowAnchor" parent="TutorialIndicator2/Control" parent_id_path=PackedInt32Array(1679036888, 1467470383) index="0" unique_id=770275375]
 rotation = 0.4660029
 
+[node name="TutorialIndicator3" parent="." unique_id=811862115 instance=ExtResource("8_ckvwl")]
+visible = false
+offset_left = 29.0
+offset_top = 209.0
+offset_right = 243.0
+offset_bottom = 297.0
+
+[node name="Text" parent="TutorialIndicator3/Background" parent_id_path=PackedInt32Array(811862115, 112207310) index="0" unique_id=2139924629]
+text = "Wait for them to finish
+working."
+
+[node name="Control" parent="TutorialIndicator3" index="1" unique_id=1467470383]
+visible = false
+
+[node name="TutorialArrowAnchor" parent="TutorialIndicator3/Control" index="0" unique_id=770275375]
+rotation = 0.4660029
+
+[node name="TutorialIndicator4" parent="." unique_id=457131241 instance=ExtResource("8_ckvwl")]
+visible = false
+offset_left = 642.0
+offset_top = 119.0
+offset_right = 856.0
+offset_bottom = 235.0
+
+[node name="Text" parent="TutorialIndicator4/Background" parent_id_path=PackedInt32Array(457131241, 112207310) index="0" unique_id=2139924629]
+text = "The employee is about 
+to violate Rule %s!
+Correct them!"
+
+[node name="TutorialArrowAnchor" parent="TutorialIndicator4/Control" parent_id_path=PackedInt32Array(457131241, 1467470383) index="0" unique_id=770275375]
+rotation = 0.64053583
+
 [editable path="TutorialIndicator1"]
 [editable path="TutorialIndicator2"]
+[editable path="TutorialIndicator3"]
+[editable path="TutorialIndicator4"]

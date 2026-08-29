@@ -5,7 +5,7 @@ func _ready():
 
 func animate():
     var pos_start = %TutorialArrow.position
-    var pos_end = %TutorialArrow.position + Vector2(10, 0).rotated(%TutorialArrowAnchor.rotation)
+    var pos_end   = %TutorialArrow.position + Vector2(10, 0).rotated(%TutorialArrowAnchor.global_rotation)
     var tween = create_tween()
     tween.set_trans(Tween.TRANS_CUBIC)
     tween.tween_property(%TutorialArrow, "position", pos_end, 0.5)
