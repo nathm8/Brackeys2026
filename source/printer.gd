@@ -19,10 +19,6 @@ var forced_damaged = null
 
 func _ready() -> void:
 	main = get_tree().root.get_node("Main")
-	# force damaged blue chip for tutorial
-	if get_tree().current_scene.name == "res://scenes/tutorial.tscn":
-		#main.add_task(Task.FormDelivery.new(self, main, Task.FormType.Blue, tuple))
-		damaged_chance = 1
 
 func is_full() -> bool:
 	return form != null

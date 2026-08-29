@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://b0b27jukrh58s"]
+
+[ext_resource type="Script" uid="uid://co1ubicsvue07" path="res://source/level3.gd" id="1_b72m1"]
+[ext_resource type="PackedScene" uid="uid://xd33kc38ua0f" path="res://scenes/blur_shader.tscn" id="2_5mhml"]
+[ext_resource type="PackedScene" uid="uid://con3at7ei0cv3" path="res://scenes/level3office.tscn" id="3_b72m1"]
+[ext_resource type="PackedScene" uid="uid://30almci084ms" path="res://scenes/ui_panel.tscn" id="4_6qt4k"]
+[ext_resource type="PackedScene" uid="uid://ksws5lqukrj4" path="res://scenes/instruction.tscn" id="5_fh4ka"]
+[ext_resource type="PackedScene" uid="uid://wrw5xnqfuiu4" path="res://scenes/ability.tscn" id="6_qewby"]
+[ext_resource type="PackedScene" uid="uid://cs7ed0ykrh2m" path="res://scenes/scorescreen.tscn" id="7_bradm"]
+
+[node name="Main" type="Node2D" unique_id=318863329]
+script = ExtResource("1_b72m1")
+total_incorrect_task_number = 10
+total_correct_task_number = 15
+quota_time = 420.0
+
+[node name="Blur" parent="." unique_id=85190629 instance=ExtResource("2_5mhml")]
+position = Vector2(1, 0)
+
+[node name="Office" parent="Blur" unique_id=961841195 instance=ExtResource("3_b72m1")]
+position = Vector2(499, 356)
+
+[node name="UIPanel" parent="." unique_id=318147905 instance=ExtResource("4_6qt4k")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 1000.0
+offset_right = 1279.0
+offset_bottom = 719.0
+grow_vertical = 1
+instruction_scene = ExtResource("5_fh4ka")
+ability_scene = ExtResource("6_qewby")
+
+[node name="Scorescreen" parent="." unique_id=1817285880 instance=ExtResource("7_bradm")]
+visible = false
+offset_left = 165.0
+offset_top = 186.0
+offset_right = 858.0
+offset_bottom = 541.0

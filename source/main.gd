@@ -85,11 +85,12 @@ func get_destination_node(destination_type):
 		push_error("no node found for destination %s - this level is missing a server or recycler" % destination_type)
 	return node
 
-func task_finished(was_correct):
-	if was_correct:
+func task_finished(was_correct, count = true):
+	if was_correct and count:
 		tasks_accomplished += 1
 	else:
-		tasks_failed += 1
+		if count:
+			tasks_failed += 1
 		speed_modifier = 0.5
 		if tween != null:
 			tween.kill()

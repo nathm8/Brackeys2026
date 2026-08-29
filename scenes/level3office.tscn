@@ -4,12 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://1boym6kr2645" path="res://scenes/monitor.tscn" id="2_xw3p1"]
 [ext_resource type="PackedScene" uid="uid://bjanwt8bty6ok" path="res://scenes/printer.tscn" id="3_8ulsg"]
 [ext_resource type="PackedScene" uid="uid://bn6c0s3tm32ot" path="res://scenes/shredder.tscn" id="4_ajsa6"]
-[ext_resource type="PackedScene" uid="uid://nj6soaiqevc2" path="res://scenes/filing_cabinet.tscn" id="5_j1ki1"]
 [ext_resource type="PackedScene" uid="uid://dirpdkxyfslhk" path="res://scenes/camera.tscn" id="6_hjalc"]
-[ext_resource type="PackedScene" path="res://scenes/space_window.tscn" id="7_ajy4l"]
+[ext_resource type="PackedScene" uid="uid://b3h7rnnkdvg2p" path="res://scenes/space_window.tscn" id="7_ajy4l"]
 [ext_resource type="PackedScene" uid="uid://cf61o7rv0f8lf" path="res://scenes/employee.tscn" id="8_c3cce"]
 [ext_resource type="PackedScene" uid="uid://c3y3ncnknl380" path="res://scenes/recharger.tscn" id="9_xw3p1"]
 [ext_resource type="Texture2D" uid="uid://ddo37lvvd7dkt" path="res://resources/coffee_machine.svg" id="10_8ulsg"]
+[ext_resource type="PackedScene" uid="uid://kc7udiligmip" path="res://scenes/server.tscn" id="10_ajsa6"]
 
 [node name="Level3" type="Node2D" unique_id=961841195]
 
@@ -46,11 +46,8 @@ position = Vector2(-399, 57)
 [node name="Printer2" parent="." unique_id=1259086594 instance=ExtResource("3_8ulsg")]
 position = Vector2(422, 69)
 
-[node name="Shredder" parent="." unique_id=1776859560 instance=ExtResource("4_ajsa6")]
+[node name="Shredder" parent="." unique_id=1776859560 groups=["recycler"] instance=ExtResource("4_ajsa6")]
 position = Vector2(-410.55106, 285.75705)
-
-[node name="FilingCabinet" parent="." unique_id=1611268436 instance=ExtResource("5_j1ki1")]
-position = Vector2(419.99997, -77.999985)
 
 [node name="Camera" parent="." unique_id=107067258 instance=ExtResource("6_hjalc")]
 position = Vector2(-0.32419538, -311.86206)
@@ -69,6 +66,13 @@ position = Vector2(0, -227)
 [node name="CoffeeMachine" type="Sprite2D" parent="." unique_id=339912859]
 position = Vector2(0, 71)
 texture = ExtResource("10_8ulsg")
+
+[node name="Server" parent="." unique_id=955253017 instance=ExtResource("10_ajsa6")]
+position = Vector2(-408, -188)
+
+[node name="Server2" parent="." unique_id=5364674 instance=ExtResource("10_ajsa6")]
+position = Vector2(419, 264)
+type = 0
 
 [node name="Employee1" parent="." unique_id=650243236 instance=ExtResource("8_c3cce")]
 position = Vector2(-180.09073, 100.63894)
