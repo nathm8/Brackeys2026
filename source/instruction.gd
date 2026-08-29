@@ -15,12 +15,14 @@ func _ready():
     pressed.connect(_button_pressed)
 
 func _button_pressed():
+
     if button_pressed:
         correction = self
     else:
         correction = null
     # unpress all other instruction buttons
-    for instruction in get_node("..").find_children("Instruction*"):
+    for instruction in get_node("..").get_children():
+        print(instruction)
         if (instruction != self):
             instruction.button_pressed = false
     release_focus() 
