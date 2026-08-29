@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://p8h5ery6vfse" path="res://resources/manager_hat.svg" id="6_jtbt0"]
 [ext_resource type="FontFile" uid="uid://1h8k8h1xtbjb" path="res://resources/FreeSerif.ttf" id="7_xhek5"]
 [ext_resource type="PackedScene" uid="uid://dmax1tinf8i5b" path="res://scenes/countdown_timer.tscn" id="9_uqt58"]
+[ext_resource type="Texture2D" uid="uid://b6or1kb4v0tnm" path="res://resources/coffee.svg" id="10_q02hg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qe1e8"]
 font = ExtResource("7_xhek5")
@@ -60,6 +61,11 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "´~`"
 label_settings = SubResource("LabelSettings_qe1e8")
+
+[node name="Coffee" type="Sprite2D" parent="EmployeeHead" unique_id=1780473658]
+visible = false
+position = Vector2(-25, 38)
+texture = ExtResource("10_q02hg")
 
 [node name="ManagerHat" type="Sprite2D" parent="." unique_id=1529544262]
 visible = false

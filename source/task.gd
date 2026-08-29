@@ -126,15 +126,18 @@ class DrinkCoffee:
     func _init(m, e):
         main = m
         employee = e
-        destination = main.find_children("Coffee*")[0].position
+        destination = main.find_children("CoffeeMachine*")[0].position
 
     func execute(delta, _e):
         # once "fixed" will stop
         if is_correct:
+            employee.get_node("EmployeeHead/Coffee").visible = false
             return true
         var speed_modifier = main.speed_modifier * employee.speed_modifier
-        if not employee.position.distance_to(destination) < 30:
+        if not employee.position.distance_to(destination) < 50:
             employee.position -= speed_modifier * delta * 100 * (employee.position - destination).normalized()
+        else:
+            employee.get_node("EmployeeHead/Coffee").visible = true
         return false
 
 enum Destination {Engineering, Science, Recycler}
