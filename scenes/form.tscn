@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://df00cdv4ja731"]
 
-[ext_resource type="Texture2D" uid="uid://cq5w2d6fkwheu" path="res://res/form.svg" id="1_cn5gw"]
+[ext_resource type="Texture2D" uid="uid://jhbnwg6xy5wp" path="res://resources/blue_chip.svg" id="1_22274"]
+[ext_resource type="Script" uid="uid://b130tttg17juh" path="res://source/form.gd" id="2_form"]
+[ext_resource type="Texture2D" uid="uid://cugqbl0ohnpag" path="res://resources/chip_damage.svg" id="3_22274"]
 
 [node name="Form" type="Sprite2D" unique_id=1705239328]
-texture = ExtResource("1_cn5gw")
+texture = ExtResource("1_22274")
+script = ExtResource("2_form")
+
+[node name="Damage" type="Sprite2D" parent="." unique_id=1640981151]
+texture = ExtResource("3_22274")

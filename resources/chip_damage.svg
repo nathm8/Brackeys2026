@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="44.265266mm"
+   height="69.150574mm"
+   viewBox="0 0 44.265266 69.150574"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   sodipodi:docname="chip_damage.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.816646"
+     inkscape:cx="75.413702"
+     inkscape:cy="198.99309"
+     inkscape:window-width="2560"
+     inkscape:window-height="1361"
+     inkscape:window-x="-9"
+     inkscape:window-y="1341"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-60.228142,-48.24305)">
+    <path
+       style="fill:#000000;fill-opacity:1;stroke-width:2.78057;stroke-linecap:square;stroke-linejoin:bevel;stroke-dashoffset:226.014"
+       d="m 93.502459,48.388693 -10.54423,17.445475 -21.128004,4.808518 21.349564,-2.677058 9.525005,20.403765 -12.000668,7.376908 2.314869,15.787929 -5.555686,5.16143 8.548619,-5.31323 L 83.097122,96.79046 96.347819,88.394045 84.716566,67.3584 Z"
+       id="path1"
+       sodipodi:nodetypes="ccccccccccccc" />
+    <path
+       style="fill:#0000ff;fill-opacity:1;stroke-width:2.64583;stroke-linecap:square;stroke-linejoin:bevel;stroke-dashoffset:226.014"
+       d="M 74.792528,68.196258 61.393293,70.963492"
+       id="path2" />
+    <path
+       style="fill:#0000ff;fill-opacity:1;stroke-width:2.64583;stroke-linecap:square;stroke-linejoin:bevel;stroke-dashoffset:226.014"
+       d="M 61.102005,70.089629 74.938172,66.448532"
+       id="path3" />
+  </g>
+</svg>

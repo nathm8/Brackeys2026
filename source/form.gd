@@ -1,14 +1,15 @@
 extends Sprite2D
 
-const Printer = preload("res://source/printer.gd")
-
 var type
+var damaged = false
 
-func _init(t):
-    type = t
-    if type == Task.FormType.Square:
-        texture = preload("res://resources/form_square.svg")
-    if type == Task.FormType.Circle:
-        texture = preload("res://resources/form_circle.svg")
-    if type == Task.FormType.Triangle:
-        texture = preload("res://resources/form_triangle.svg")
+# called by the printer once the scene has been instantiated, since a
+# scene root can't take constructor arguments
+func setup(chip_type, is_damaged) -> void:
+	type = chip_type
+	damaged = is_damaged
+	if type == Task.FormType.Blue:
+		texture = preload("res://resources/blue_chip.svg")
+	elif type == Task.FormType.Red:
+		texture = preload("res://resources/red_chip.svg")
+	$Damage.visible = damaged
