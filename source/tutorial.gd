@@ -54,3 +54,7 @@ func advance_tutorial():
         var employee = get_node("Blur/Office/Employee")
         var rule_number = 2 if employee.current_task.form.type == Task.FormType.Triangle else 3
         get_node("TutorialIndicator4/Background/Text").text %= str(rule_number)
+
+func finalise(win):
+    super(win)
+    get_node("TutorialIndicator4").visible = false
