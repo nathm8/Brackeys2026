@@ -1,7 +1,7 @@
 extends Node2D
 
 enum ServerType {Engineering, Science}
-@export var type: ServerType = ServerType.Engineering
+@export var type: ServerType = ServerType.Science
 
 @onready var fans = $Fans
 @onready var lights = $Lights

@@ -97,6 +97,9 @@ class FormDelivery:
 			else:
 				employee.position -= speed_modifier * delta * 100 * (employee.global_position - form.global_position).normalized()
 		else:
+			# a level with no matching server/recycler would otherwise crash every frame
+			if destination == null:
+				return false
 			if employee.position.distance_to(destination.position) < 10:
 				var timer = employee.get_node("Timer")
 				timer.visible = true

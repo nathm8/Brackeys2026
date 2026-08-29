@@ -73,14 +73,17 @@ func add_task_front_queue(task):
 	
 # single place mapping a Destination to the node deliveries walk to
 func get_destination_node(destination_type):
+	var node
 	match destination_type:
 		Task.Destination.Engineering:
-			return get_tree().get_first_node_in_group("engineering_server")
+			node = get_tree().get_first_node_in_group("engineering_server")
 		Task.Destination.Science:
-			return get_tree().get_first_node_in_group("science_server")
+			node = get_tree().get_first_node_in_group("science_server")
 		Task.Destination.Recycler:
-			return get_tree().get_first_node_in_group("recycler")
-	return null
+			node = get_tree().get_first_node_in_group("recycler")
+	if node == null:
+		push_error("no node found for destination %s - this level is missing a server or recycler" % destination_type)
+	return node
 
 func task_finished(was_correct):
 	if was_correct:

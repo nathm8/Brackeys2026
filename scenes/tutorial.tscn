@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://30almci084ms" path="res://scenes/ui_panel.tscn" id="4_0epgs"]
 [ext_resource type="PackedScene" uid="uid://ksws5lqukrj4" path="res://scenes/instruction.tscn" id="5_g2equ"]
 [ext_resource type="PackedScene" uid="uid://wrw5xnqfuiu4" path="res://scenes/ability.tscn" id="6_tbcdj"]
-[ext_resource type="PackedScene" uid="uid://cs7ed0ykrh2m" path="res://scenes/scorescreen.tscn" id="7_ej4tf"]
-[ext_resource type="PackedScene" uid="uid://b2mv7rgcsjjmt" path="res://scenes/tutorial_office.tscn" id="7_gbqnl"]
-[ext_resource type="PackedScene" uid="uid://dt5u723vt4ols" path="res://scenes/tutorial_indicator.tscn" id="8_ckvwl"]
+[ext_resource type="PackedScene" path="res://scenes/scorescreen.tscn" id="7_ej4tf"]
+[ext_resource type="PackedScene" uid="uid://btqhckwcng8ya" path="res://scenes/tutorial_office.tscn" id="7_gbqnl"]
+[ext_resource type="PackedScene" path="res://scenes/tutorial_indicator.tscn" id="8_ckvwl"]
 
 [node name="Main" type="Node2D" unique_id=318863329]
 script = ExtResource("1_gbqnl")
