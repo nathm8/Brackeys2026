@@ -123,3 +123,40 @@ class FormDelivery:
             var tween = employee.create_tween()
             tween.tween_interval(1)
             tween.tween_callback(func f(): employee.get_node("MistakeLabel").visible = false)
+            
+class RechargeBattery:
+
+    var main
+    var recharger_node
+    var target_position
+    var time_to_complete = 5
+    var full_time_to_complete = 5
+    var is_correct = true
+
+    func _init(m):
+        main = m
+        for r in main.find_children("Recharger*"):
+            recharger_node = r
+            break
+        target_position = recharger_node.get_node("Marker2D").global_position
+
+    func execute(delta, employee):
+        var speed_modifier = main.speed_modifier * employee.speed_modifier
+        if employee.global_position.distance_to(target_position) < 10:
+            recharger_node.in_use = true
+            var timer = employee.get_node("Timer")
+            timer.visible = true
+            timer.value = time_to_complete
+            timer.max_value = full_time_to_complete
+            time_to_complete -= speed_modifier * delta
+            if time_to_complete <= 0:
+                finish(employee)
+                return true
+        else:
+            employee.position -= speed_modifier * delta * 100 * (employee.global_position - target_position).normalized()
+        return false
+
+    func finish(employee):
+        employee.get_node("Timer").visible = false
+        recharger_node.in_use = false
+        main.battery_charged()

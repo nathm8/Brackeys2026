@@ -27,6 +27,7 @@ run/main_run_args="debug"
 [global_group]
 
 ui_panel=""
+recharger=""
 
 [physics]
 

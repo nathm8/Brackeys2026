@@ -18,10 +18,13 @@ position = Vector2(1, 0)
 position = Vector2(500, 356)
 
 [node name="UIPanel" parent="." unique_id=318147905 instance=ExtResource("3_ejswk")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_left = 1000.0
-offset_top = 0.0
 offset_right = 1279.0
 offset_bottom = 719.0
+grow_vertical = 1
 instruction_scene = ExtResource("5_6sh32")
 ability_scene = ExtResource("6_ejswk")
 

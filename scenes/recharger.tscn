@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c3y3ncnknl380"]
+
+[ext_resource type="Texture2D" uid="uid://cpq3obg40m440" path="res://resources/recharger.svg" id="1_plt4e"]
+[ext_resource type="Script" uid="uid://b5qjby3qw2cu7" path="res://source/recharger.gd" id="2_yqdlf"]
+[ext_resource type="Texture2D" uid="uid://qxvl8ynwsu5m" path="res://resources/crank.svg" id="3_i6b1c"]
+
+[node name="Recharger" type="Sprite2D" unique_id=1986725704 groups=["recharger"]]
+texture = ExtResource("1_plt4e")
+script = ExtResource("2_yqdlf")
+
+[node name="Crank" type="Sprite2D" parent="." unique_id=730728715]
+texture = ExtResource("3_i6b1c")
+offset = Vector2(18, 0)
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=58178548]
+position = Vector2(-48, 0)

@@ -12,12 +12,6 @@ var type
 
 func _ready():
 	pressed.connect(_button_pressed)
-	#if text == "1) Work on Computer":
-		#type = InstructionType.ComputerWork
-	#if text == "2) File Triangle Forms":
-		#type = InstructionType.BlueInsert
-	#if text == "3) Shred Square Forms":
-		#type = InstructionType.DamagedShred
 
 func _button_pressed():
 	if button_pressed:

@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://b55e3r48442bw"]
+
+[ext_resource type="Script" uid="uid://bru5kp78kfawh" path="res://source/main.gd" id="1_6ep0u"]
+[ext_resource type="PackedScene" uid="uid://xd33kc38ua0f" path="res://scenes/blur_shader.tscn" id="2_hrcei"]
+[ext_resource type="PackedScene" uid="uid://dtvfxddbafu0u" path="res://scenes/level1office.tscn" id="3_xa7n4"]
+[ext_resource type="PackedScene" uid="uid://30almci084ms" path="res://scenes/ui_panel.tscn" id="4_bo4dx"]
+[ext_resource type="PackedScene" uid="uid://ksws5lqukrj4" path="res://scenes/instruction.tscn" id="5_76toy"]
+[ext_resource type="PackedScene" uid="uid://wrw5xnqfuiu4" path="res://scenes/ability.tscn" id="6_8g4ke"]
+[ext_resource type="PackedScene" path="res://scenes/scorescreen.tscn" id="7_56gwk"]
+[ext_resource type="PackedScene" uid="uid://c3y3ncnknl380" path="res://scenes/recharger.tscn" id="8_hrcei"]
+
+[node name="Main" type="Node2D" unique_id=318863329]
+script = ExtResource("1_6ep0u")
+unlocked_abilities = Array[String](["RechargeBatteries"])
+
+[node name="Blur" parent="." unique_id=85190629 instance=ExtResource("2_hrcei")]
+z_index = -1
+position = Vector2(1, 0)
+
+[node name="Office" parent="Blur" unique_id=1930234121 instance=ExtResource("3_xa7n4")]
+position = Vector2(499, 356)
+
+[node name="UIPanel" parent="." unique_id=318147905 instance=ExtResource("4_bo4dx")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 1000.0
+offset_right = 1279.0
+offset_bottom = 719.0
+grow_vertical = 1
+instruction_scene = ExtResource("5_76toy")
+ability_scene = ExtResource("6_8g4ke")
+
+[node name="Scorescreen" parent="." unique_id=1817285880 instance=ExtResource("7_56gwk")]
+visible = false
+offset_left = 165.0
+offset_top = 186.0
+offset_right = 858.0
+offset_bottom = 541.0
+
+[node name="Recharger" parent="." unique_id=1986725704 instance=ExtResource("8_hrcei")]
+position = Vector2(499, 117)

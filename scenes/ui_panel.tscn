@@ -9,6 +9,7 @@
 [ext_resource type="StyleBox" uid="uid://db6kqjl6vp8dv" path="res://scenes/button_style_box_pressed.tres" id="6_pn8jl"]
 [ext_resource type="StyleBox" uid="uid://b5bor5hiqrx6x" path="res://scenes/button_style_box_hover.tres" id="7_rxj8x"]
 [ext_resource type="Theme" uid="uid://du0jxeopdrc65" path="res://scenes/default_text.tres" id="8_pn8jl"]
+[ext_resource type="Texture2D" uid="uid://loj1rbta5r6y" path="res://resources/battery_empty.svg" id="10_rmsby"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_pn8jl"]
 grow_begin = 15.0
@@ -44,14 +45,9 @@ events = [SubResource("InputEventKey_n8rfu")]
 
 [node name="UIPanel" type="Control" unique_id=1955749401 groups=["ui_panel"]]
 layout_mode = 3
-anchor_left = -0.106000006
-anchor_top = -0.48700002
-anchor_right = 0.108
-anchor_bottom = 0.5
-offset_left = 135.68001
-offset_top = 350.64
-offset_right = 141.76
-offset_bottom = 360.0
+anchor_right = 0.219
+anchor_bottom = 1.0
+grow_vertical = 2
 script = ExtResource("1_dfook")
 
 [node name="OfficeBackground" type="NinePatchRect" parent="." unique_id=647117524]
@@ -154,3 +150,31 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 6
 alignment = 2
+
+[node name="BatteryContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1365907186]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Battery" type="TextureRect" parent="MarginContainer/VBoxContainer/BatteryContainer" unique_id=1387747635]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+texture = ExtResource("10_rmsby")
+
+[node name="Battery2" type="TextureRect" parent="MarginContainer/VBoxContainer/BatteryContainer" unique_id=1052293913]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+texture = ExtResource("10_rmsby")
+
+[node name="Battery3" type="TextureRect" parent="MarginContainer/VBoxContainer/BatteryContainer" unique_id=848676110]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+texture = ExtResource("10_rmsby")
+
+[node name="Battery4" type="TextureRect" parent="MarginContainer/VBoxContainer/BatteryContainer" unique_id=789939395]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+texture = ExtResource("10_rmsby")

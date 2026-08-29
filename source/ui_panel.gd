@@ -3,9 +3,16 @@ extends Control
 @onready var level_timer = %LevelTimer
 @onready var rules_container = %RulesContainer
 @onready var actions_container = %ActionsContainer
+@onready var battery_container = %BatteryContainer
+
+@onready var empty_battery_texture = preload("res://resources/battery_empty.svg")
+@onready var charged_battery_texture = preload("res://resources/battery.svg")
 
 @export var instruction_scene: PackedScene
 @export var ability_scene: PackedScene
+
+const MAX_BATTERIES = 4
+var charged_batteries = 0
 
 const RULE_LABELS := {
 	"ComputerWork": "Work on Computer",
@@ -42,8 +49,27 @@ func setup(unlocked_rules: Array[String], unlocked_abilities: Array[String]) -> 
 		button.text = ABILITY_LABELS[key]
 		actions_container.add_child(button)
 		
+	# only display batteries if the ability is unlocked
+	var has_batteries = unlocked_abilities.has("RechargeBatteries")
+	battery_container.visible = has_batteries
+	if has_batteries:
+		charged_batteries = 2
+	_refresh_battery_display()
+		
 func _clear(container: Node) -> void:
 	for child in container.get_children():
 		container.remove_child(child)
 		child.queue_free()
 		
+func update_battery_display(battery_change):
+	if battery_change == "charged":
+		charged_batteries += 1
+	elif battery_change == "depleted":
+		charged_batteries -= 1
+	charged_batteries = clampi(charged_batteries, 0, MAX_BATTERIES)
+	_refresh_battery_display()
+
+func _refresh_battery_display():
+	for battery_rect in battery_container.get_children():
+		if battery_rect is TextureRect:
+			battery_rect.texture = charged_battery_texture if battery_rect.get_index() < charged_batteries else empty_battery_texture

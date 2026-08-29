@@ -5,7 +5,7 @@
 [ext_resource type="StyleBox" uid="uid://b5bor5hiqrx6x" path="res://scenes/button_style_box_hover.tres" id="3_0a5yo"]
 [ext_resource type="Script" uid="uid://w0qgtjdidg5o" path="res://source/ability.gd" id="4_rt4q8"]
 
-[node name="Instruction" type="Button" unique_id=1828442142]
+[node name="Ability" type="Button" unique_id=1828442142]
 offset_left = -91.529
 offset_top = -22.719
 offset_right = 91.529076
