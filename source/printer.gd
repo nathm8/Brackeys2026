@@ -1,7 +1,10 @@
 extends Sprite2D
 
 var form
-const Form = preload("res://source/form.gd")
+const ChipScene = preload("res://scenes/form.tscn")
+
+# proportion of printed chips that come out damaged
+const DAMAGED_CHANCE = 0.3
 
 var main
 
@@ -11,24 +14,26 @@ func _ready() -> void:
 func is_full() -> bool:
 	return form != null
 
-# todo: parameterise this for arbitrary FormTypes and Destinations
 func get_printable():
 	var do_correctly = main.do_task_correctly.pop_back()
 	if do_correctly == null:
 		return null
 	var out = Task.FormTaskTuple.new()
-	out.form = [Task.FormType.Triangle, Task.FormType.Square].pick_random()
+	out.form = [Task.FormType.Red, Task.FormType.Blue].pick_random()
+	out.damaged = randf() < DAMAGED_CHANCE
 	out.is_correct = do_correctly
-	if do_correctly:
-		if out.form == Task.FormType.Triangle:
-			out.target = Task.Destination.FilingCabinet
-		else:
-			out.target = Task.Destination.Shredder
+	# where this chip belongs on colour alone
+	var colour_server = Task.Destination.Engineering
+	var other_server = Task.Destination.Science
+	if out.form == Task.FormType.Blue:
+		colour_server = Task.Destination.Science
+		other_server = Task.Destination.Engineering
+	if out.damaged:
+		# damaged chips belong in the recycler; the mistake is filing
+		# them at the server they'd have gone to undamaged
+		out.target = Task.Destination.Recycler if do_correctly else colour_server
 	else:
-		if out.form == Task.FormType.Triangle:
-			out.target = Task.Destination.Shredder
-		else:
-			out.target = Task.Destination.FilingCabinet
+		out.target = colour_server if do_correctly else other_server
 	return out
 
 func print():
@@ -37,8 +42,9 @@ func print():
 	# no more jobs
 	if tuple == null:
 		return null
-	form = Form.new(tuple.form)
+	form = ChipScene.instantiate()
 	add_child(form)
+	form.setup(tuple.form, tuple.damaged)
 	form.position.y += 40
 
 	main.add_task(Task.FormDelivery.new(self, main, form, tuple))

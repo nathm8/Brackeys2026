@@ -36,34 +36,29 @@ func check_if_valid_correction(task) -> bool:
 
 	if type == InstructionType.ComputerWork:
 		return task is Task.ComputerWork
-	# FormDeliveryTask only considered corrected based on the destination
-	if type == InstructionType.BlueInsert:
-		return (task is Task.FormDelivery and
-			   task.form.type == Task.FormType.Triangle and
-			   task.destination_type == Task.Destination.Shredder)
+	if not task is Task.FormDelivery:
+		return false
+	# a damaged chip belongs in the recycler whatever its colour, so this
+	# is checked ahead of the colour rules
 	if type == InstructionType.DamagedShred:
-		return (task is Task.FormDelivery and
-			   task.form.type == Task.FormType.Square and
-			   task.destination_type == Task.Destination.FilingCabinet)
-	
+		return task.form.damaged
+	if type == InstructionType.RedInsert:
+		return not task.form.damaged and task.form.type == Task.FormType.Red
+	if type == InstructionType.BlueInsert:
+		return not task.form.damaged and task.form.type == Task.FormType.Blue
+
 	return false
 
 func fix(task):
 	assert(not task.is_correct, "already-correct task passed to fix()")
 	task.is_correct = true
-	if task is Task.ComputerWork:
-		pass
-	var main = get_tree().root.get_node("Main")
-	# hack: this should be specified out of our instruction type
 	if task is Task.FormDelivery:
+		var main = get_tree().root.get_node("Main")
 		task.time_to_complete = 1
-		if task.form.type == Task.FormType.Triangle:
-			for dest in main.find_children("FilingCabinet*"):
-				task.destination = dest
-				break
-			task.destination_type = Task.Destination.FilingCabinet
+		if task.form.damaged:
+			task.destination_type = Task.Destination.Recycler
+		elif task.form.type == Task.FormType.Red:
+			task.destination_type = Task.Destination.Engineering
 		else:
-			for dest in main.find_children("Shredder*"):
-				task.destination = dest
-				break
-			task.destination_type = Task.Destination.Shredder
+			task.destination_type = Task.Destination.Science
+		task.destination = main.get_destination_node(task.destination_type)

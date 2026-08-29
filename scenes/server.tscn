@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://kc7udiligmip"]
+
+[ext_resource type="Script" uid="uid://h7d7osnwlj47" path="res://scenes/server.gd" id="1_6bwch"]
+[ext_resource type="Texture2D" uid="uid://bd23ylbqd6r86" path="res://resources/server.svg" id="1_m3u1i"]
+[ext_resource type="Texture2D" uid="uid://d1oc0xubprgfd" path="res://resources/fan.svg" id="3_3iytc"]
+[ext_resource type="Texture2D" uid="uid://deeqsth3uornt" path="res://resources/lights.svg" id="4_3iytc"]
+
+[node name="Server" type="Node2D" unique_id=955253017]
+script = ExtResource("1_6bwch")
+
+[node name="Base" type="Sprite2D" parent="." unique_id=1311061531]
+position = Vector2(0, -19.5)
+texture = ExtResource("1_m3u1i")
+
+[node name="Fans" type="Node2D" parent="." unique_id=1944859764]
+position = Vector2(0, -19.5)
+
+[node name="FanSprite" type="Sprite2D" parent="Fans" unique_id=1942232797]
+position = Vector2(17, 61)
+texture = ExtResource("3_3iytc")
+
+[node name="FanSprite2" type="Sprite2D" parent="Fans" unique_id=266678603]
+position = Vector2(-17, 60)
+texture = ExtResource("3_3iytc")
+
+[node name="Lights" type="Sprite2D" parent="." unique_id=257816705]
+position = Vector2(0, -19.5)
+texture = ExtResource("4_3iytc")
+
+[node name="Timer" type="Timer" parent="." unique_id=600404234]
+
+[node name="Logo" type="Sprite2D" parent="." unique_id=1444605101]
+position = Vector2(0, -78)

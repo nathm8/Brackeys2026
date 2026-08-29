@@ -19,7 +19,7 @@ const RULE_LABELS := {
     "BlueInsert": "Blue Chips to Science",
     "BlueScience": "Blue Employees Order Blue Chips",
     "RedInsert": "Red Chips to Engineering",
-    "DamagedShred": "Shred Damaged Chips",
+    "DamagedShred": "Damaged Chips to Recycler",
     "NoCoffee": "No drinking coffee",
     "NoCoffeeExBreak": "No drinking coffee"
 }

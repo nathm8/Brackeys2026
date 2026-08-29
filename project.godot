@@ -28,6 +28,9 @@ run/main_run_args="debug"
 
 ui_panel=""
 recharger=""
+engineering_server=""
+science_server=""
+recycler=""
 
 [physics]
 
