@@ -34,7 +34,6 @@ func _ready():
 	for _x in correct_task_number:
 		do_task_correctly.append(true)
 	do_task_correctly.shuffle()
-	print(quota_time)
 	ui_panel.level_timer.max_value = quota_time
 	ui_panel.level_timer.value = quota_time
 	

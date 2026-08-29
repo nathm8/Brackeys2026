@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/timer.svg-7b0d3b41bd06a76fa7c9963946f6e86c.dp
 
 [params]
 
-base_scale=1.0
+base_scale=0.5
 saturation=1.0
 color_map={}
 compress=true

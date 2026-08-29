@@ -12,7 +12,7 @@
 script = ExtResource("1_b72m1")
 total_incorrect_task_number = 10
 total_correct_task_number = 15
-quota_time = 180.0
+quota_time = 300.0
 
 [node name="Blur" parent="." unique_id=85190629 instance=ExtResource("2_5mhml")]
 position = Vector2(1, 0)

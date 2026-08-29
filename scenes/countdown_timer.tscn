@@ -10,11 +10,10 @@ outline_color = Color(0.6666667, 0.6666667, 0.6666667, 1)
 
 [node name="TextureProgressBar" type="TextureProgressBar" unique_id=559533282]
 process_mode = 1
-offset_left = -53.000008
-offset_top = -54.00001
-offset_right = 110.99999
-offset_bottom = 109.999985
-scale = Vector2(0.65, 0.65)
+offset_left = -41.0
+offset_top = -41.0
+offset_right = 41.0
+offset_bottom = 41.0
 step = 0.0
 value = 100.0
 fill_mode = 5
@@ -24,10 +23,10 @@ script = ExtResource("2_5r2fa")
 [node name="Label" type="Label" parent="." unique_id=1451919368]
 visible = false
 layout_mode = 0
-offset_left = 63.374176
-offset_top = 71.196365
-offset_right = 103.374176
-offset_bottom = 94.196365
+offset_left = 22.374176
+offset_top = 29.196365
+offset_right = 62.374176
+offset_bottom = 52.196365
 text = "60"
 label_settings = SubResource("LabelSettings_5r2fa")
 horizontal_alignment = 1
