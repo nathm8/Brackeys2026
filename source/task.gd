@@ -1,5 +1,7 @@
 class_name Task
 
+const Employee = preload("res://source/employee.gd")
+
 # default task to generate forms
 class ComputerWork:
 
@@ -54,6 +56,19 @@ class ComputerWork:
         for printer in main.find_children("Printer*"):
             if not printer.is_full():
                 printer.print()
+                break
+
+class BlueScience:
+
+    var main
+    var employee
+    var is_correct
+
+    func _init(m, e):
+        main = m
+        employee = e
+        is_correct = employee.uniform == Employee.Uniform.Science
+
 
 enum Destination {FilingCabinet, Shredder}
 enum FormType {Triangle, Square, Circle}

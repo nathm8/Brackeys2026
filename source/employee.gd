@@ -17,6 +17,7 @@ const angry_faces = ["≖_≖", "⌣̀_⌣́", "╥‸╥", "•ิ_•ิ", "¬
 enum Uniform {Science, Engineering, Security}
 const uniforms = [Uniform.Science, Uniform.Engineering, Uniform.Security]
 var uniform: Uniform
+var body
 
 # https://coolors.co/4281a4-f4e76e-fe5f00
 static func get_uniform_colour(u: Uniform):
@@ -44,7 +45,7 @@ func _ready():
     # pick a body
     var bodies = [1, 2]
     bodies.shuffle()
-    var body = get_node("EmployeeBody%s" % bodies[0])
+    body = get_node("EmployeeBody%s" % bodies[0])
     body.self_modulate = get_uniform_colour(uniform)
     get_node("EmployeeBody%s" % bodies[1]).visible = false
     
@@ -55,6 +56,10 @@ func _ready():
 
     # have the area2D child call our input_event
     get_node("Area2D").input_event.connect(func(_v, e, _s): input_event(e))
+
+func set_uniform(u):
+    uniform = u
+    body.self_modulate = get_uniform_colour(uniform)
 
 func _process(delta):
     if get_tree().paused:

@@ -7,7 +7,7 @@ static var correction
 
 # todo: generalise into some sort of verb-noun conjugation, with associated
 # correct and incorrect tasks
-enum InstructionType {ComputerWork, BlueInsert, RedInsert, DamagedShred}
+enum InstructionType {ComputerWork, BlueScience, BlueInsert, RedInsert, DamagedShred}
 var type
 
 func _ready():

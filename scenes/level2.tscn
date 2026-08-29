@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b55e3r48442bw"]
+[gd_scene format=3 uid="uid://ck36ijq3y7x50"]
 
 [ext_resource type="Script" uid="uid://bru5kp78kfawh" path="res://source/main.gd" id="1_6ep0u"]
 [ext_resource type="PackedScene" uid="uid://xd33kc38ua0f" path="res://scenes/blur_shader.tscn" id="2_hrcei"]
@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://30almci084ms" path="res://scenes/ui_panel.tscn" id="4_bo4dx"]
 [ext_resource type="PackedScene" uid="uid://ksws5lqukrj4" path="res://scenes/instruction.tscn" id="5_76toy"]
 [ext_resource type="PackedScene" uid="uid://wrw5xnqfuiu4" path="res://scenes/ability.tscn" id="6_8g4ke"]
-[ext_resource type="PackedScene" path="res://scenes/scorescreen.tscn" id="7_56gwk"]
-[ext_resource type="PackedScene" uid="uid://c3y3ncnknl380" path="res://scenes/recharger.tscn" id="8_hrcei"]
+[ext_resource type="PackedScene" uid="uid://cs7ed0ykrh2m" path="res://scenes/scorescreen.tscn" id="7_56gwk"]
+[ext_resource type="PackedScene" path="res://scenes/recharger.tscn" id="8_hrcei"]
 
 [node name="Main" type="Node2D" unique_id=318863329]
 script = ExtResource("1_6ep0u")
