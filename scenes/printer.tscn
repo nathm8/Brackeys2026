@@ -2,7 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://chjjw0bs8c1um" path="res://resources/printer.svg" id="1_jhpce"]
 [ext_resource type="Script" uid="uid://bpnh1uhx4y0xs" path="res://source/printer.gd" id="2_kdvce"]
+[ext_resource type="Texture2D" uid="uid://cjga3afhf8plg" path="res://resources/printer_light.svg" id="3_jf8il"]
 
 [node name="Printer" type="Sprite2D" unique_id=882071107]
 texture = ExtResource("1_jhpce")
 script = ExtResource("2_kdvce")
+
+[node name="Timer" type="Timer" parent="." unique_id=783783912]
+wait_time = 0.1
+
+[node name="Light" type="Sprite2D" parent="." unique_id=1541751443]
+texture = ExtResource("3_jf8il")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

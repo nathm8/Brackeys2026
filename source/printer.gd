@@ -5,8 +5,12 @@ const ChipScene = preload("res://scenes/form.tscn")
 
 # proportion of printed chips that come out damaged
 const DAMAGED_CHANCE = 0.3
+const FLASH_COUNT = 4
+var _flashes_left := 0
 
 var main
+
+@onready var light = $Light
 
 func _ready() -> void:
 	main = get_tree().root.get_node("Main")
@@ -48,3 +52,14 @@ func print():
 	form.position.y += 40
 
 	main.add_task(Task.FormDelivery.new(self, main, form, tuple))
+	flash()
+	
+func flash(times := 3):
+	_flashes_left = times * 2 
+	$Timer.start()
+
+func _on_timer_timeout() -> void:
+	light.visible = not light.visible
+	_flashes_left -= 1
+	if _flashes_left <= 0:
+		$Timer.stop()
