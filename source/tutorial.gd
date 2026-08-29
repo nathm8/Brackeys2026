@@ -4,7 +4,7 @@ var tutorial_step = 1
 
 func _ready():
     # simplified rules/actions
-    unlocked_rules = ["ComputerWork", "RedInsert", "DamagedShred"]
+    unlocked_rules = ["ComputerWork", "BlueInsert", "DamagedShred"]
     unlocked_abilities = []
     super()
     # disable shader
@@ -28,7 +28,6 @@ func back_to_work_check(event):
 
 func advance_tutorial():
     tutorial_step += 1
-    print("advanced tutorial ", tutorial_step)
     for ind in find_children("TutorialIndicator*"):
         ind.visible = false
     get_node("TutorialIndicator%s" % str(tutorial_step)).visible = true
@@ -37,9 +36,7 @@ func advance_tutorial():
         get_node("UIPanel/MarginContainer/VBoxContainer/TimerContainer/Button").pressed.disconnect(advance_tutorial)
         # force our employee to play solitaire
         var employee = get_node("Blur/Office/Employee")
-        var task = Task.ComputerWork.new(self, employee)
-        task.is_correct = false
-        to_do = [task]
+        employee.current_task.is_correct = false
         # force the printed form to be incorrect
         do_task_correctly = [false]
         # triggers to advance
