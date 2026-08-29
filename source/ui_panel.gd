@@ -50,7 +50,7 @@ func setup(unlocked_rules: Array[String], unlocked_abilities: Array[String]) -> 
         rules_container.add_child(button)
 
     for i in unlocked_abilities.size():
-        var key := unlocked_rules[i]
+        var key := unlocked_abilities[i]
         assert(Ability.AbilityType.has(key), "unknown ability: " + key)
         var button: Ability = ability_scene.instantiate()
         button.type = Ability.AbilityType[key]

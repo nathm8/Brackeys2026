@@ -1,8 +1,6 @@
 extends Node2D
 
 # changed to global class, no longer loading in employee scene
-#const Instruction = preload("res://source/instruction.gd")
-#const Ability = preload("res://source/ability.gd")
 
 var current_task
 var pending_task
@@ -12,9 +10,23 @@ var default_face
 
 var previous_x = 0
 
-static var default_faces = ["´~`", "•_•", " '-'"]
-static var happy_faces = ["⊙ω⊙", "¬‿¬", "„• ֊ •„", ">ᴗ<", "˘ᵕ˘"]
-static var angry_faces = ["≖_≖", "⌣̀_⌣́", "╥‸╥", "•ิ_•ิ", "¬`‸´¬"]
+const default_faces = ["´~`", "•_•", " '-'"]
+const happy_faces = ["⊙ω⊙", "¬‿¬", "„• ֊ •„", ">ᴗ<", "˘ᵕ˘"]
+const angry_faces = ["≖_≖", "⌣̀_⌣́", "╥‸╥", "•ิ_•ิ", "¬`‸´¬"]
+
+enum Uniform {Science, Engineering, Security}
+const uniforms = [Uniform.Science, Uniform.Engineering, Uniform.Security]
+var uniform: Uniform
+
+# https://coolors.co/4281a4-f4e76e-fe5f00
+static func get_uniform_colour(u: Uniform):
+    if u == Uniform.Science:
+        return Color.hex(0x4281a4ff)
+    if u == Uniform.Engineering:
+        return Color.hex(0xf4e76eff)
+    if u == Uniform.Security:
+        return Color.hex(0xfe5f00ff)
+    return Color.hex(0xaaaaaaff)
 
 func _ready():
     position.x += randi() % 400 - 200
@@ -25,12 +37,17 @@ func _ready():
     face = get_node("EmployeeHead/Face")
     face.text = default_face
     get_node("EmployeeHead").self_modulate = Globals.skin_tones.pick_random()
+    
+    # uniform init, may need to be parameterised by level
+    uniform = uniforms.pick_random()
+
     # pick a body
     var bodies = [1, 2]
     bodies.shuffle()
     var body = get_node("EmployeeBody%s" % bodies[0])
-    body.self_modulate = get_node("EmployeeHead").self_modulate
+    body.self_modulate = get_uniform_colour(uniform)
     get_node("EmployeeBody%s" % bodies[1]).visible = false
+    
     # disable clothing for now
     get_node("ManagerHat").visible = false
     for vest in find_children("UnionVest*"):
