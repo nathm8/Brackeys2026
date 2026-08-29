@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/pause.svg-29072a3027259e3eed9fc97b5eb90f85.dp
 
 [params]
 
-base_scale=0.5
+base_scale=0.4
 saturation=1.0
 color_map={}
 compress=true

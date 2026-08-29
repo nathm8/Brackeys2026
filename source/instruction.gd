@@ -22,7 +22,6 @@ func _button_pressed():
         correction = null
     # unpress all other instruction buttons
     for instruction in get_node("..").get_children():
-        print(instruction)
         if (instruction != self):
             instruction.button_pressed = false
     release_focus() 

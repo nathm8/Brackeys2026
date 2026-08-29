@@ -1,6 +1,7 @@
 extends Control
 
 @onready var level_timer = %LevelTimer
+@onready var quota_progress = %QuotaProgressBar
 @onready var rules_container = %RulesContainer
 @onready var actions_container = %ActionsContainer
 @onready var battery_container = %BatteryContainer
@@ -85,3 +86,9 @@ func _refresh_battery_display():
     for battery_rect in battery_container.get_children():
         if battery_rect is TextureRect:
             battery_rect.texture = charged_battery_texture if battery_rect.get_index() < charged_batteries else empty_battery_texture
+
+func _process(_delta):
+    var main = get_tree().root.get_node("Main")
+    if main == null:
+        return
+    quota_progress.value = 100 * (main.tasks_accomplished + main.tasks_failed)/(main.total_correct_task_number + main.total_incorrect_task_number)

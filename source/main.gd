@@ -34,14 +34,13 @@ func _ready():
 	for _x in correct_task_number:
 		do_task_correctly.append(true)
 	do_task_correctly.shuffle()
+	print(quota_time)
 	ui_panel.level_timer.max_value = quota_time
+	ui_panel.level_timer.value = quota_time
 	
 	# configure rules panel according to unlocked rules/actions
 	ui_panel.setup(unlocked_rules, unlocked_abilities)
 	
-	# setup servers
-	
-
 func _process(_delta: float):
 	# flash red if there's been a failed task
 	var red_bias = 1 - speed_modifier
