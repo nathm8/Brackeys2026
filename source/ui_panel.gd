@@ -29,7 +29,7 @@ const ABILITY_LABELS := {
     "CraneArm": "Relocate Employee"
 }
 
-const QWERTY := [KEY_S, KEY_W, KEY_E, KEY_R, KEY_T, KEY_Y]
+const QWERTY := [KEY_Q, KEY_W, KEY_E, KEY_R, KEY_T, KEY_Y]
 const NUMBERS := [KEY_1, KEY_2, KEY_3, KEY_4, KEY_5, KEY_6, KEY_7, KEY_8, KEY_9, KEY_0]
         
 func setup(unlocked_rules: Array[String], unlocked_abilities: Array[String]) -> void:
@@ -54,7 +54,7 @@ func setup(unlocked_rules: Array[String], unlocked_abilities: Array[String]) -> 
         assert(Ability.AbilityType.has(key), "unknown ability: " + key)
         var button: Ability = ability_scene.instantiate()
         button.type = Ability.AbilityType[key]
-        button.text = ABILITY_LABELS[key]
+        button.text = "%s) %s" % [["Q","W","E","R","T","Y"][i], ABILITY_LABELS[key]]
         button.shortcut = Shortcut.new()
         var event = InputEventKey.new()
         event.keycode = QWERTY[i]
