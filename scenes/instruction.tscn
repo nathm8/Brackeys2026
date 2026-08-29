@@ -6,6 +6,7 @@
 [ext_resource type="StyleBox" uid="uid://b5bor5hiqrx6x" path="res://scenes/button_style_box_hover.tres" id="3_jgaaj"]
 
 [node name="Instruction" type="Button" unique_id=1828442142]
+process_mode = 3
 offset_left = -91.529
 offset_top = -22.719
 offset_right = 91.529076

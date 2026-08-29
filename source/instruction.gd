@@ -22,6 +22,7 @@ func _button_pressed():
 	for instruction in get_node("..").find_children("Instruction*"):
 		if (instruction != self):
 			instruction.button_pressed = false
+	release_focus() 
 
 # i.e. check if we're issuing the right sort of correction. Returns
 # false if the task was already correct, or if we've issued a nonsense

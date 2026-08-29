@@ -19,6 +19,7 @@ func _button_pressed():
 	else:
 		correction = null
 	_unpress_others()
+	release_focus() 
 
 func check_if_valid_correction(employee) -> bool:
 	button_pressed = false

@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://ksjohbhhbn0d" path="res://source/timer.gd" id="2_5r2fa"]
 
 [node name="TextureProgressBar" type="TextureProgressBar" unique_id=559533282]
+process_mode = 1
 offset_left = -82.0
 offset_top = -82.0
 offset_right = 82.0

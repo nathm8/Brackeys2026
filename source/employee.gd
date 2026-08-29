@@ -40,6 +40,8 @@ func _ready():
     get_node("Area2D").input_event.connect(func(_v, e, _s): input_event(e))
 
 func _process(delta):
+    if get_tree().paused:
+        delta = 0
     if current_task == null:
         if pending_task != null:
             current_task = pending_task
