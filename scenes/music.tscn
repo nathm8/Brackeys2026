@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://co31kmkf6tj3q"]
+
+[ext_resource type="AudioStream" uid="uid://cwaycbms5b8fl" path="res://sound/menu.ogg" id="1_05ggv"]
+[ext_resource type="Script" uid="uid://bxil6q82gdmv8" path="res://source/music.gd" id="2_ibx2e"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=1627918967]
+process_mode = 3
+stream = ExtResource("1_05ggv")
+volume_db = -10.0
+autoplay = true
+parameters/looping = true
+script = ExtResource("2_ibx2e")

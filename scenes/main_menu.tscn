@@ -23,21 +23,6 @@ expand_margin_bottom = 5.0
 outline_size = 5
 outline_color = Color(0.011764706, 0.011764706, 0.011764706, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekxnf"]
-bg_color = Color(0.09019608, 0.09019608, 0.09019608, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqqt6"]
-bg_color = Color(0.09019608, 0.09019608, 0.09019608, 1)
-draw_center = false
-border_color = Color(0.21430813, 0.21430813, 0.21430813, 1)
-corner_detail = 14
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ln24"]
-bg_color = Color(0.09019608, 0.09019608, 0.09019608, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rtw2f"]
-bg_color = Color(0.09019608, 0.09019608, 0.09019608, 1)
-
 [sub_resource type="LabelSettings" id="LabelSettings_rtw2f"]
 font_size = 70
 font_color = Color(0, 0, 0.09803922, 1)
@@ -131,27 +116,56 @@ text = "Level Three"
 
 [node name="OptionsContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=2092253577]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/OptionsContainer" unique_id=861887692]
 layout_mode = 2
+theme_override_constants/separation = 20
 alignment = 1
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/OptionsContainer/HBoxContainer" unique_id=1857562637]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/OptionsContainer/HBoxContainer" unique_id=2093958091]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/OptionsContainer/HBoxContainer/VBoxContainer" unique_id=1857562637]
 layout_mode = 2
 text = "Toggle Shaders"
 label_settings = SubResource("LabelSettings_8ln24")
 
-[node name="ShaderCheck" type="CheckButton" parent="MarginContainer/VBoxContainer/OptionsContainer/HBoxContainer" unique_id=191747018]
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/OptionsContainer/HBoxContainer/VBoxContainer" unique_id=2054865227]
+layout_mode = 2
+text = "Music Volume"
+label_settings = SubResource("LabelSettings_8ln24")
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/OptionsContainer/HBoxContainer/VBoxContainer" unique_id=1224562527]
+layout_mode = 2
+text = "Mute Music"
+label_settings = SubResource("LabelSettings_8ln24")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/OptionsContainer/HBoxContainer" unique_id=1284493300]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="ShaderCheck" type="CheckButton" parent="MarginContainer/VBoxContainer/OptionsContainer/HBoxContainer/VBoxContainer2" unique_id=191747018]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_ekxnf")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_bqqt6")
-theme_override_styles/hover = SubResource("StyleBoxFlat_8ln24")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_rtw2f")
 button_pressed = true
+alignment = 1
+autowrap_trim_flags = 0
+
+[node name="MusicVolume" type="HSlider" parent="MarginContainer/VBoxContainer/OptionsContainer/HBoxContainer/VBoxContainer2" unique_id=1159689660]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+min_value = -30.0
+max_value = 0.0
+value = -10.0
+
+[node name="MuteMusic" type="CheckButton" parent="MarginContainer/VBoxContainer/OptionsContainer/HBoxContainer/VBoxContainer2" unique_id=354701760]
+unique_name_in_owner = true
+layout_mode = 2
 alignment = 1
 autowrap_trim_flags = 0
 
