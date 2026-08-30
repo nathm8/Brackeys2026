@@ -116,6 +116,7 @@ text = "Level Three"
 
 [node name="OptionsContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=2092253577]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 alignment = 1
 

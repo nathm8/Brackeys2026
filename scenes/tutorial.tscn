@@ -90,10 +90,10 @@ rotation = 0.4660029
 
 [node name="TutorialIndicator4" parent="." unique_id=457131241 instance=ExtResource("8_ckvwl")]
 visible = false
-offset_left = 642.0
-offset_top = 119.0
-offset_right = 856.0
-offset_bottom = 235.0
+offset_left = 624.0
+offset_top = 123.0
+offset_right = 838.0
+offset_bottom = 239.0
 
 [node name="Text" parent="TutorialIndicator4/Background" parent_id_path=PackedInt32Array(457131241, 112207310) index="0" unique_id=2139924629]
 text = "The employee is about 
@@ -101,7 +101,7 @@ to violate Rule %s!
 Correct them!"
 
 [node name="TutorialArrowAnchor" parent="TutorialIndicator4/Control" parent_id_path=PackedInt32Array(457131241, 1467470383) index="0" unique_id=770275375]
-rotation = 0.64053583
+rotation = 0.5235988
 
 [editable path="TutorialIndicator1"]
 [editable path="TutorialIndicator2"]
