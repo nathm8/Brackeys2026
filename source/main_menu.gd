@@ -1,23 +1,29 @@
 extends Node2D
 
 func _ready():
-	get_node("Start").pressed.connect(start_game)
-	get_node("LevelSelect").pressed.connect(toggle_levels)
-	get_node("Options").pressed.connect(toggle_options)
+    %Start.pressed.connect(start_game)
+    %LevelSelect.pressed.connect(toggle_levels)
+    %Options.pressed.connect(toggle_options)
 
-	get_node("LevelPanel/LevelOne").pressed.connect(start_game)
+    get_node("MarginContainer/VBoxContainer/LevelContainer/Tutorial").pressed.connect(start_game)
+    get_node("MarginContainer/VBoxContainer/LevelContainer/LevelOne").pressed.connect(func f(): get_tree().change_scene_to_file("res://scenes/interstitial1.tscn"))
+    get_node("MarginContainer/VBoxContainer/LevelContainer/LevelTwo").pressed.connect(func f(): get_tree().change_scene_to_file("res://scenes/interstitial2.tscn"))
+    get_node("MarginContainer/VBoxContainer/LevelContainer/LevelThree").pressed.connect(func f(): get_tree().change_scene_to_file("res://scenes/interstitial3.tscn"))
 
-	get_node("OptionsPanel/CheckButton").pressed.connect(func f(): Globals.shader_enabled = get_node("OptionsPanel/CheckButton").button_pressed)
+    var shader_check = %ShaderCheck
+    %ShaderCheck.pressed.connect(func f(): Globals.shader_enabled = shader_check.button_pressed)
 
 func start_game():
-	get_tree().change_scene_to_file("res://scenes/interstitial1.tscn")
+    get_tree().change_scene_to_file("res://scenes/tutorial.tscn")
 
 func toggle_levels():
-	get_node("LevelPanel").visible = not get_node("LevelPanel").visible
-	if get_node("LevelPanel").visible:
-		get_node("OptionsPanel").visible = false
+    %LevelContainer.visible = not %LevelContainer.visible
+    if %LevelContainer.visible:
+        %OptionsContainer.visible = false
+        %Options.button_pressed = false
 
 func toggle_options():
-	get_node("OptionsPanel").visible = not get_node("OptionsPanel").visible
-	if get_node("Options").visible:
-		get_node("LevelPanel").visible = false
+    %OptionsContainer.visible = not %OptionsContainer.visible
+    if %OptionsContainer.visible:
+        %LevelContainer.visible = false
+        %LevelSelect.button_pressed = false
