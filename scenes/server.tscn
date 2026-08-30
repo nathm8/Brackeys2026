@@ -9,11 +9,11 @@
 script = ExtResource("1_6bwch")
 
 [node name="Base" type="Sprite2D" parent="." unique_id=1311061531]
-position = Vector2(0, -19.5)
+position = Vector2(0, -19)
 texture = ExtResource("1_m3u1i")
 
 [node name="Fans" type="Node2D" parent="." unique_id=1944859764]
-position = Vector2(0, -19.5)
+position = Vector2(0, -19)
 
 [node name="FanSprite" type="Sprite2D" parent="Fans" unique_id=1942232797]
 position = Vector2(17, 61)
@@ -24,10 +24,35 @@ position = Vector2(-17, 60)
 texture = ExtResource("3_3iytc")
 
 [node name="Lights" type="Sprite2D" parent="." unique_id=257816705]
-position = Vector2(0, -19.5)
+position = Vector2(0, -19)
 texture = ExtResource("4_3iytc")
 
 [node name="Timer" type="Timer" parent="." unique_id=600404234]
+wait_time = 0.2
+autostart = true
 
 [node name="Logo" type="Sprite2D" parent="." unique_id=1444605101]
-position = Vector2(0, -78)
+position = Vector2(0, -79)
+
+[node name="DeadLights" type="Node2D" parent="." unique_id=850946377]
+visible = false
+modulate = Color(0.2585664, 0.2585664, 0.25856638, 1)
+position = Vector2(0, -19)
+
+[node name="DeadLight" type="Sprite2D" parent="DeadLights" unique_id=1943636192]
+
+[node name="DeadLight2" type="Sprite2D" parent="DeadLights" unique_id=1951996894]
+
+[node name="DeadLight3" type="Sprite2D" parent="DeadLights" unique_id=234235324]
+
+[node name="DeadLight4" type="Sprite2D" parent="DeadLights" unique_id=1050925419]
+
+[node name="DeadLight5" type="Sprite2D" parent="DeadLights" unique_id=286875043]
+
+[node name="DeadLight6" type="Sprite2D" parent="DeadLights" unique_id=808234592]
+
+[node name="DeadLight7" type="Sprite2D" parent="DeadLights" unique_id=677642695]
+
+[node name="DeadLight8" type="Sprite2D" parent="DeadLights" unique_id=543257995]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,11 +1,11 @@
-[gd_scene format=3 uid="uid://cd12yja4r0301"]
+[gd_scene format=3 uid="uid://boo4s7s8l1037"]
 
-[ext_resource type="Texture2D" uid="uid://dk2cfg0okwnng" path="res://resources/office_background.svg" id="1_ni1yv"]
-[ext_resource type="Script" uid="uid://dks2cswsh3m1g" path="res://source/interstitial1.gd" id="2_0kdkl"]
-[ext_resource type="PackedScene" path="res://scenes/space_window.tscn" id="3_1wlfk"]
-[ext_resource type="StyleBox" uid="uid://mdixg5q5pmiv" path="res://scenes/button_style_box_normal.tres" id="4_vdprc"]
-[ext_resource type="StyleBox" uid="uid://db6kqjl6vp8dv" path="res://scenes/button_style_box_pressed.tres" id="5_s3kac"]
-[ext_resource type="StyleBox" uid="uid://b5bor5hiqrx6x" path="res://scenes/button_style_box_hover.tres" id="6_s4xyu"]
+[ext_resource type="Script" uid="uid://ds82b72lek3am" path="res://source/interstitial_3.gd" id="1_i22bd"]
+[ext_resource type="PackedScene" path="res://scenes/space_window.tscn" id="2_as0ko"]
+[ext_resource type="Texture2D" uid="uid://dk2cfg0okwnng" path="res://resources/office_background.svg" id="3_n1l23"]
+[ext_resource type="StyleBox" uid="uid://mdixg5q5pmiv" path="res://scenes/button_style_box_normal.tres" id="4_fqh3e"]
+[ext_resource type="StyleBox" uid="uid://db6kqjl6vp8dv" path="res://scenes/button_style_box_pressed.tres" id="5_k1cbr"]
+[ext_resource type="StyleBox" uid="uid://b5bor5hiqrx6x" path="res://scenes/button_style_box_hover.tres" id="6_0cumh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0kdkl"]
 font_size = 24
@@ -22,21 +22,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("2_0kdkl")
+script = ExtResource("1_i22bd")
 
-[node name="SpaceWindow" parent="." unique_id=1221022350 instance=ExtResource("3_1wlfk")]
+[node name="SpaceWindow" parent="." unique_id=1221022350 instance=ExtResource("2_as0ko")]
 
 [node name="Background" type="NinePatchRect" parent="." unique_id=1218136677]
 self_modulate = Color(0.972549, 0.95686275, 0.5647059, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.2
-anchor_top = 0.2
+anchor_top = 0.17
 anchor_right = 0.8
-anchor_bottom = 0.8
+anchor_bottom = 0.83
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_ni1yv")
+texture = ExtResource("3_n1l23")
 patch_margin_left = 40
 patch_margin_top = 40
 patch_margin_right = 40
@@ -81,11 +81,11 @@ default_color = Color(0, 0, 0, 1)
 custom_minimum_size = Vector2(668, 230)
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
-text = "Reports of this department engaging in improper use of work terminals has been noted by Senior Leadership. 
+text = "Good news. Senior Leadership has been pleased with recent improvements to this department's performance. As a reward, a coffee machine was ordered for your department. 
 
-Any employees caught playing solitaire instead of working will be reprimanded by their manager.
+Unfortunately, since then, performance has dropped precipitously and so new disciplinary measures are required. Employees are prohibited from using the newly installed coffee machine.
 
-Further, the high incident rate of damaged chips being inserted into machines is unacceptable. If this continues, special measures will be taken to improve employee performance."
+Additionally, leaderships has received complaints from science officers of a high rate of damaged chips produced by engineers. To mitigate this, only science officers (blue uniform) may order blue chips."
 label_settings = SubResource("LabelSettings_ni1yv")
 autowrap_mode = 3
 
@@ -93,8 +93,8 @@ autowrap_mode = 3
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_styles/normal = ExtResource("4_vdprc")
-theme_override_styles/pressed = ExtResource("5_s3kac")
-theme_override_styles/hover = ExtResource("6_s4xyu")
-theme_override_styles/focus = ExtResource("5_s3kac")
+theme_override_styles/normal = ExtResource("4_fqh3e")
+theme_override_styles/pressed = ExtResource("5_k1cbr")
+theme_override_styles/hover = ExtResource("6_0cumh")
+theme_override_styles/focus = ExtResource("5_k1cbr")
 text = "Continue"
