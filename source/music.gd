@@ -11,7 +11,7 @@ var enabled = true:
     get:
         return enabled
 const menu_music = preload("res://sound/menu.ogg")
-# const level_music = preload("res://sound/level.ogg")
+const level_music = preload("res://sound/play.ogg")
 
 func _ready():
     play_stream(menu_music)
@@ -45,11 +45,10 @@ func queue_stream(audio_stream):
     if !enabled:
         return
     fade_out()
-    tween.tween_callback(play_stream(audio_stream))
+    tween.tween_callback(func f(): play_stream(audio_stream))
 
 func play_menu_music():
     queue_stream(menu_music)
 
 func play_level_music():
-    # queue_stream(menu_music)
-    pass
+    queue_stream(level_music)
