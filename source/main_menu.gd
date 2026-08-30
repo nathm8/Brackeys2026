@@ -17,6 +17,7 @@ func _ready():
     %MuteMusic.toggled.connect(func f(_v): Music.enabled = not %MuteMusic.button_pressed)
 
 func start_game():
+    Music.play_level_music()
     get_tree().change_scene_to_file("res://scenes/tutorial.tscn")
 
 func toggle_levels():

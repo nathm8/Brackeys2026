@@ -113,7 +113,7 @@ func finalise(win):
 	if win:
 		get_node("Scorescreen/Button").text = "Next Level"
 		var next = int(get_tree().current_scene.scene_file_path.split(".tscn")[0][-1]) + 1
-		get_node("Scorescreen/Button").pressed.connect(func f(): get_tree().change_scene_to_file("res://scenes/interstitial%d.tscn" % next))
+		get_node("Scorescreen/Button").pressed.connect(func f(): get_tree().change_scene_to_file("res://scenes/interstitial%d.tscn" % next); Music.play_menu_music())
 		blurb = "Quota met!"
 	else:
 		get_node("Scorescreen/Button").text = "Try Again"

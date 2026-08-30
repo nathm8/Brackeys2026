@@ -46,3 +46,10 @@ func queue_stream(audio_stream):
         return
     fade_out()
     tween.tween_callback(play_stream(audio_stream))
+
+func play_menu_music():
+    queue_stream(menu_music)
+
+func play_level_music():
+    # queue_stream(menu_music)
+    pass

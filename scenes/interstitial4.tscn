@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://b61y62xy5sux5"]
+
+[ext_resource type="PackedScene" uid="uid://b3h7rnnkdvg2p" path="res://scenes/space_window.tscn" id="2_ojdw8"]
+[ext_resource type="Texture2D" uid="uid://dk2cfg0okwnng" path="res://resources/office_background.svg" id="3_ts1ye"]
+[ext_resource type="StyleBox" uid="uid://mdixg5q5pmiv" path="res://scenes/button_style_box_normal.tres" id="4_3aykd"]
+[ext_resource type="StyleBox" uid="uid://db6kqjl6vp8dv" path="res://scenes/button_style_box_pressed.tres" id="5_yj5d2"]
+[ext_resource type="StyleBox" uid="uid://b5bor5hiqrx6x" path="res://scenes/button_style_box_hover.tres" id="6_pt6a0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0kdkl"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ni1yv"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="Interstitial" type="Control" unique_id=926356430]
+self_modulate = Color(0.972549, 0.95686275, 0.5647059, 1)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SpaceWindow" parent="." unique_id=1221022350 instance=ExtResource("2_ojdw8")]
+
+[node name="Background" type="NinePatchRect" parent="." unique_id=1218136677]
+self_modulate = Color(0.972549, 0.95686275, 0.5647059, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.17
+anchor_right = 0.8
+anchor_bottom = 0.83
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ts1ye")
+patch_margin_left = 40
+patch_margin_top = 40
+patch_margin_right = 40
+patch_margin_bottom = 40
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Background" unique_id=649368807]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/MarginContainer" unique_id=1120945855]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Title" type="Label" parent="Background/MarginContainer/VBoxContainer" unique_id=1940086848]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "EMPLOYEE NOTICE"
+label_settings = SubResource("LabelSettings_0kdkl")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Underline" type="Line2D" parent="Background/MarginContainer/VBoxContainer/Title" unique_id=1106981278]
+position = Vector2(3.0517578e-05, 2.4375339)
+scale = Vector2(1, 0.8749988)
+points = PackedVector2Array(225.99997, 30.357162, 441.99997, 30.357162)
+width = 4.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Text" type="Label" parent="Background/MarginContainer/VBoxContainer" unique_id=778857388]
+custom_minimum_size = Vector2(668, 230)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "a winner is u"
+label_settings = SubResource("LabelSettings_ni1yv")
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="Background/MarginContainer/VBoxContainer" unique_id=2014129286]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = ExtResource("4_3aykd")
+theme_override_styles/pressed = ExtResource("5_yj5d2")
+theme_override_styles/hover = ExtResource("6_pt6a0")
+theme_override_styles/focus = ExtResource("5_yj5d2")
+text = "yay"
