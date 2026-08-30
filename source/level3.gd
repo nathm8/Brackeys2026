@@ -4,7 +4,7 @@ const Employee = preload("res://source/employee.gd")
 
 func _ready():
 	unlocked_rules = ["ComputerWork", "BlueScience", "BlueInsert", "RedInsert", "DamagedShred", "NoCoffee"]
-	unlocked_abilities = ["RechargeBatteries"]
+	unlocked_abilities = ["RechargeBatteries", "SpeedUp"]
 	super()
 
 	# ensure we have at least one blueshirt
