@@ -81,7 +81,7 @@ default_color = Color(0, 0, 0, 1)
 custom_minimum_size = Vector2(668, 230)
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
-text = "Senior Leadership wishes to inform you that this department has been consistently underperforming on all metrics. 
+text = "Senior Leadership wishes to inform you that this team has been consistently underperforming on all metrics. 
 
 Your manager has been given special permissions to speed up the work with remote intramuscular stimulation. If you are being directly monitored by the manager, your work speed will increase.
 

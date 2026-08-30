@@ -12,36 +12,36 @@ enum InstructionType {ComputerWork, BlueScience, BlueInsert, RedInsert, DamagedS
 var type
 
 func _ready():
-    pressed.connect(_button_pressed)
+	pressed.connect(_button_pressed)
 
 func _button_pressed():
 
-    if button_pressed:
-        correction = self
-    else:
-        correction = null
-    # unpress all other instruction buttons
-    for instruction in get_node("..").get_children():
-        if (instruction != self):
-            instruction.button_pressed = false
-    release_focus() 
+	if button_pressed:
+		correction = self
+	else:
+		correction = null
+	# unpress all other instruction buttons
+	for instruction in get_node("..").get_children():
+		if (instruction != self):
+			instruction.button_pressed = false
+	release_focus() 
 
 # i.e. check if we're issuing the right sort of correction. Returns
 # false if the task was already correct, or if we've issued a nonsense
 # correction
 func check_if_valid_correction(task) -> bool:
-    # untoggle the button
-    button_pressed = false
+	# untoggle the button
+	button_pressed = false
 
-    # ordering blue chips is only allowed by blue shirts
-    if task is Task.BlueChip and type == InstructionType.BlueScience:
-        return task.employee.uniform != Employee.Uniform.Science
+	# ordering blue chips is only allowed by blue shirts
+	if task is Task.BlueChip and type == InstructionType.BlueScience:
+		return task.employee.uniform != Employee.Uniform.Science
 
-    # shortcut to simplify below logic
-    if task.is_correct:
-        return false
+	# shortcut to simplify below logic
+	if task.is_correct:
+		return false
 
-    # working on computer is a valid correction only if they're playing
+	# working on computer is a valid correction only if they're playing
     # solitaire i.e. task.is_correct = false and the task is computer work
     if type == InstructionType.ComputerWork:
         return task is Task.ComputerWork or task is Task.BlueChip or task is Task.RedChip

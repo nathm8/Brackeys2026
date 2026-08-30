@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b61y62xy5sux5"]
 
-[ext_resource type="PackedScene" uid="uid://b3h7rnnkdvg2p" path="res://scenes/space_window.tscn" id="2_ojdw8"]
+[ext_resource type="Script" uid="uid://dn0kg37ebt1xk" path="res://source/interstitial_4.gd" id="1_nnf84"]
+[ext_resource type="PackedScene" path="res://scenes/space_window.tscn" id="2_ojdw8"]
 [ext_resource type="Texture2D" uid="uid://dk2cfg0okwnng" path="res://resources/office_background.svg" id="3_ts1ye"]
 [ext_resource type="StyleBox" uid="uid://mdixg5q5pmiv" path="res://scenes/button_style_box_normal.tres" id="4_3aykd"]
 [ext_resource type="StyleBox" uid="uid://db6kqjl6vp8dv" path="res://scenes/button_style_box_pressed.tres" id="5_yj5d2"]
@@ -21,6 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_nnf84")
 
 [node name="SpaceWindow" parent="." unique_id=1221022350 instance=ExtResource("2_ojdw8")]
 
@@ -29,9 +31,9 @@ self_modulate = Color(0.972549, 0.95686275, 0.5647059, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.2
-anchor_top = 0.17
+anchor_top = 0.2
 anchor_right = 0.8
-anchor_bottom = 0.83
+anchor_bottom = 0.8
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_ts1ye")
@@ -79,7 +81,13 @@ default_color = Color(0, 0, 0, 1)
 custom_minimum_size = Vector2(668, 230)
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
-text = "a winner is u"
+text = "Senior Leadership commends you for your outstanding performance this quarter.
+
+From one of the Starship's most disappointing teams, to one of it's finest. You should be proud to call yourself an employee of the Starship Reverse Centaur.
+
+It's not empty praise—it's recognition.
+
+Congratulations."
 label_settings = SubResource("LabelSettings_ni1yv")
 autowrap_mode = 3
 
@@ -91,4 +99,4 @@ theme_override_styles/normal = ExtResource("4_3aykd")
 theme_override_styles/pressed = ExtResource("5_yj5d2")
 theme_override_styles/hover = ExtResource("6_pt6a0")
 theme_override_styles/focus = ExtResource("5_yj5d2")
-text = "yay"
+text = "Hooray"

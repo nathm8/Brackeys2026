@@ -81,11 +81,11 @@ default_color = Color(0, 0, 0, 1)
 custom_minimum_size = Vector2(668, 230)
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
-text = "Good news. Senior Leadership has been pleased with recent improvements to this department's performance. As a reward, a coffee machine was ordered for your department. 
+text = "Good news. Senior Leadership has been pleased with recent improvements to this team's performance. As a reward, a coffee machine was ordered for your team to enjoy.
 
 Unfortunately, since then, performance has dropped precipitously and so new disciplinary measures are required. Employees are prohibited from using the newly installed coffee machine.
 
-Additionally, leaderships has received complaints from science officers of a high rate of damaged chips produced by engineers. To mitigate this, only science officers (blue uniform) may order blue chips."
+Additionally, Senior Leadership has received complaints from science officers of a high rate of damaged chips produced by engineers. To mitigate this, only science officers (blue uniform) may now order blue chips."
 label_settings = SubResource("LabelSettings_ni1yv")
 autowrap_mode = 3
 
