@@ -121,3 +121,10 @@ func input_event(event):
 					tween.tween_property(self, "speed_modifier", 1.0, 5)
 					tween.tween_callback(func f(): face.text = default_face)
 				Ability.correction = null
+
+func get_watched_speedup():
+	speed_modifier += 1.0
+	var tween = create_tween()
+	tween.tween_property(self, "speed_modifier", 1.0, 2)
+	face.text = "Ó⌓Ò"
+	tween.tween_callback(func f(): face.text = default_face)

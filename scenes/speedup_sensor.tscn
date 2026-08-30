@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bawccdyd06m3a"]
+
+[ext_resource type="Script" uid="uid://nf2bvlkkuhdo" path="res://source/speedup.gd" id="1_r8ksk"]
+[ext_resource type="Texture2D" uid="uid://c63bdnureur2f" path="res://resources/employee_head.svg" id="1_turup"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ktbqi"]
+radius = 25.0
+
+[node name="Node2D" type="Node2D" unique_id=1238892822]
+modulate = Color(1, 0, 0, 0.19607843)
+script = ExtResource("1_r8ksk")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1806050246]
+position = Vector2(0, -0.25000048)
+scale = Vector2(5, 2.4)
+texture = ExtResource("1_turup")
+
+[node name="Area2D" type="Area2D" parent="Sprite" unique_id=1788752695]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Area2D" unique_id=769323768]
+shape = SubResource("CircleShape2D_ktbqi")

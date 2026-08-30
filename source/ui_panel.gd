@@ -27,6 +27,7 @@ const RULE_LABELS := {
 
 const ABILITY_LABELS := {
 	"RechargeBatteries": "Recharge Batteries",
+	"SpeedUp": "Speed Up",
 	"CraneArm": "Relocate Employee"
 }
 

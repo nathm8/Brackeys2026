@@ -7,11 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://ksws5lqukrj4" path="res://scenes/instruction.tscn" id="5_76toy"]
 [ext_resource type="PackedScene" uid="uid://wrw5xnqfuiu4" path="res://scenes/ability.tscn" id="6_8g4ke"]
 [ext_resource type="PackedScene" uid="uid://cs7ed0ykrh2m" path="res://scenes/scorescreen.tscn" id="7_56gwk"]
-[ext_resource type="PackedScene" path="res://scenes/recharger.tscn" id="8_hrcei"]
+[ext_resource type="PackedScene" uid="uid://c3y3ncnknl380" path="res://scenes/recharger.tscn" id="8_hrcei"]
 
 [node name="Main" type="Node2D" unique_id=318863329]
 script = ExtResource("1_6ep0u")
-unlocked_abilities = Array[String](["RechargeBatteries"])
+unlocked_abilities = Array[String](["RechargeBatteries", "SpeedUp"])
 
 [node name="Blur" parent="." unique_id=85190629 instance=ExtResource("2_hrcei")]
 z_index = -1
