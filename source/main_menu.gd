@@ -13,8 +13,8 @@ func _ready():
     var shader_check = %ShaderCheck
     %ShaderCheck.pressed.connect(func f(): Globals.shader_enabled = shader_check.button_pressed)
 
-    %MusicVolume.value_changed.connect(func f(v): Music.volume_db = v)
-    %MuteMusic.toggled.connect(func f(_v): Music.playing = not %MuteMusic.button_pressed)
+    %MusicVolume.value_changed.connect(Music.set_volume)
+    %MuteMusic.toggled.connect(func f(_v): Music.enabled = not %MuteMusic.button_pressed)
 
 func start_game():
     get_tree().change_scene_to_file("res://scenes/tutorial.tscn")
