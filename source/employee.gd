@@ -5,7 +5,11 @@ extends Node2D
 var previous_task
 var current_task
 var pending_task
-var speed_modifier = 1.0
+var speed_modifier = 1.0:
+    get:
+        return 2*speed_modifier if watched else speed_modifier
+var watched = false
+var tween
 var face
 var default_face
 
@@ -92,14 +96,18 @@ func input_event(event):
                     # show surprise, speed up
                     face.text = happy_faces.pick_random()
                     speed_modifier += 0.5
-                    var tween = create_tween()
+                    if tween != null and tween.is_running():
+                        tween.kill()
+                    tween = create_tween()
                     tween.tween_property(self, "speed_modifier", 1.0, 5)
                     tween.tween_callback(func f(): face.text = default_face)
                 else:
                     # show anger or confusion, stop for awhile
                     speed_modifier = 0.0
                     face.text = angry_faces.pick_random()
-                    var tween = create_tween()
+                    if tween != null and tween.is_running():
+                        tween.kill()
+                    tween = create_tween()
                     tween.tween_property(self, "speed_modifier", 1.0, 5)
                     tween.tween_callback(func f(): face.text = default_face)
                 Instruction.correction = null
@@ -110,21 +118,26 @@ func input_event(event):
                     Ability.correction.fix(self)
                     # acknowledge the order
                     face.text = happy_faces.pick_random()
-                    var tween = create_tween()
+                    if tween != null and tween.is_running():
+                        tween.kill()
+                    tween = create_tween()
                     tween.tween_interval(1)
                     tween.tween_callback(func f(): face.text = default_face)
                 else:
                     # show anger or confusion, stop for awhile
                     speed_modifier = 0.0
                     face.text = angry_faces.pick_random()
-                    var tween = create_tween()
+                    if tween != null and tween.is_running():
+                        tween.kill()
+                    tween = create_tween()
                     tween.tween_property(self, "speed_modifier", 1.0, 5)
                     tween.tween_callback(func f(): face.text = default_face)
                 Ability.correction = null
 
 func get_watched_speedup():
-    speed_modifier += 1.0
-    var tween = create_tween()
-    tween.tween_property(self, "speed_modifier", 1.0, 2)
+    watched = true
     face.text = "Ó⌓Ò"
-    tween.tween_callback(func f(): face.text = default_face)
+
+func lose_watched_speedup():
+    watched = false
+    face.text = default_face

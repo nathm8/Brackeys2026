@@ -6,6 +6,7 @@ var dying = false
 
 func _ready():
     get_node("Sprite/Area2D").area_entered.connect(speedup)
+    get_node("Sprite/Area2D").area_exited.connect(slowdown)
     lifetime = total_lifetime
     scale = Vector2(0, 0)
     var tween = create_tween()
@@ -26,3 +27,8 @@ func speedup(area: Area2D):
     # employees are the only nodes with area
     var employee = area.get_node("..")
     employee.get_watched_speedup()
+
+func slowdown(area: Area2D):
+    # employees are the only nodes with area
+    var employee = area.get_node("..")
+    employee.lose_watched_speedup()
