@@ -5,107 +5,107 @@ const Employee = preload("res://source/employee.gd")
 # default task to generate forms
 class ComputerWork:
 
-	var monitor_node
-	var time_to_complete = 5
-	var full_time_to_complete = 5
-	var main
-	var employee
-	var is_correct
+    var monitor_node
+    var time_to_complete = 5
+    var full_time_to_complete = 5
+    var main
+    var employee
+    var is_correct
 
-	var forced_form
+    var forced_form
 
-	func _init(m, e, result=null):
-		main = m
-		employee = e
-		is_correct = randi() % 10 != 0
+    func _init(m, e, result=null):
+        main = m
+        employee = e
+        is_correct = randi() % 10 != 0
 
-		forced_form = result
-		find_monitor()
+        forced_form = result
+        find_monitor()
 
-	func find_monitor():
-		var min_d = 1000
-		var closest_monitor
-		for monitor in main.find_children("Monitor?"):
-			if not monitor.in_use:
-				var d = employee.position.distance_to(monitor.position)
-				if d < min_d:
-					min_d = d
-					closest_monitor = monitor
-		monitor_node = closest_monitor
-		closest_monitor.in_use = true
+    func find_monitor():
+        var min_d = 1000
+        var closest_monitor
+        for monitor in main.find_children("Monitor?"):
+            if not monitor.in_use:
+                var d = employee.position.distance_to(monitor.position)
+                if d < min_d:
+                    min_d = d
+                    closest_monitor = monitor
+        monitor_node = closest_monitor
+        closest_monitor.in_use = true
 
-	func execute(delta, _e):
-		var speed_modifier = main.speed_modifier * employee.speed_modifier
-		if employee.position.distance_to(monitor_node.position) < 10:
-			var timer = employee.get_node("Timer")
-			timer.visible = true
-			timer.value = time_to_complete
-			timer.max_value = full_time_to_complete
-			if is_correct:
-				if forced_form == null:
-					monitor_node.set_working()
-				elif forced_form == FormType.Red:
-					monitor_node.set_working_red()
-				else:
-					monitor_node.set_working_blue()
-				time_to_complete -= speed_modifier * delta
-				if time_to_complete <= 0:
-					finish()
-					return true
-			else:
-				monitor_node.set_slacking()
-		else:
-			employee.position -= speed_modifier * delta * 100 * (employee.position - monitor_node.position).normalized()
-		return false
+    func execute(delta, _e):
+        var speed_modifier = main.speed_modifier * employee.speed_modifier
+        if employee.position.distance_to(monitor_node.position) < 10:
+            var timer = employee.get_node("Timer")
+            timer.visible = true
+            timer.value = time_to_complete
+            timer.max_value = full_time_to_complete
+            if is_correct:
+                if forced_form == null:
+                    monitor_node.set_working()
+                elif forced_form == FormType.Red:
+                    monitor_node.set_working_red()
+                else:
+                    monitor_node.set_working_blue()
+                time_to_complete -= speed_modifier * delta
+                if time_to_complete <= 0:
+                    finish()
+                    return true
+            else:
+                monitor_node.set_slacking()
+        else:
+            employee.position -= speed_modifier * delta * 100 * (employee.position - monitor_node.position).normalized()
+        return false
 
-	func finish():
-		employee.get_node("Timer").visible = false
-		monitor_node.in_use = false
-		monitor_node.set_off()
-		monitor_node = null
-		time_to_complete = full_time_to_complete
-		for printer in main.find_children("Printer*"):
-			if not printer.is_full():
-				printer.print()
-				break
+    func finish():
+        employee.get_node("Timer").visible = false
+        monitor_node.in_use = false
+        monitor_node.set_off()
+        monitor_node = null
+        time_to_complete = full_time_to_complete
+        for printer in main.find_children("Printer*"):
+            if not printer.is_full():
+                printer.print()
+                break
 
 class RedChip extends ComputerWork:
-	func _init(m, e):
-		super(m, e, FormType.Red)
-	
-	func finish():
-		employee.get_node("Timer").visible = false
-		monitor_node.in_use = false
-		monitor_node.set_off()
-		monitor_node = null
-		time_to_complete = full_time_to_complete
-		for printer in main.find_children("Printer*"):
-			if not printer.is_full():
-				printer.forced_form = forced_form
-				printer.print()
-				printer.forced_form = null
-				break
+    func _init(m, e):
+        super(m, e, FormType.Red)
+    
+    func finish():
+        employee.get_node("Timer").visible = false
+        monitor_node.in_use = false
+        monitor_node.set_off()
+        monitor_node = null
+        time_to_complete = full_time_to_complete
+        for printer in main.find_children("Printer*"):
+            if not printer.is_full():
+                printer.forced_form = forced_form
+                printer.print()
+                printer.forced_form = null
+                break
 
 class BlueChip extends ComputerWork:
 
-	var cancelled = false
+    var cancelled = false
 
-	func _init(m, e):
-		super(m, e, FormType.Blue)
-	
-	func finish():
-		employee.get_node("Timer").visible = false
-		monitor_node.in_use = false
-		monitor_node.set_off()
-		monitor_node = null
-		if cancelled:
-			return
-		time_to_complete = full_time_to_complete
-		for printer in main.find_children("Printer*"):
-			if not printer.is_full():
-				printer.forced_form = forced_form
-				printer.forced_damaged = employee.uniform != Employee.Uniform.Science
-				# give a task failure penalty, but don't count it toward total task failures
+    func _init(m, e):
+        super(m, e, FormType.Blue)
+    
+    func finish():
+        employee.get_node("Timer").visible = false
+        monitor_node.in_use = false
+        monitor_node.set_off()
+        monitor_node = null
+        if cancelled:
+            return
+        time_to_complete = full_time_to_complete
+        for printer in main.find_children("Printer*"):
+            if not printer.is_full():
+                printer.forced_form = forced_form
+                printer.forced_damaged = employee.uniform != Employee.Uniform.Science
+                # give a task failure penalty, but don't count it toward total task failures
                 if employee.uniform != Employee.Uniform.Science:
                     main.task_finished(false, false)
                 printer.print()
